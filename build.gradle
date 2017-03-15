@@ -1,0 +1,7 @@
+defaultTasks 'clean', 'build'
+
+subprojects {
+    repositories {
+        mavenCentral()
+    }
+}

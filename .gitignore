@@ -1,0 +1,10 @@
+out/
+classes/
+
+# Idea Files
+.idea/*
+!.idea/runConfigurations/
+!.idea/gradle.xml
+!.idea/vcs.xml
+.gradle
+*/build
