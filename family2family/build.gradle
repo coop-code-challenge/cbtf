@@ -10,20 +10,24 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
+
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
-    compile("org.springframework.security.oauth:spring-security-oauth2:${springOauthVersion}")
+    compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
     compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     compile("org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}")
-    compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile("org.springframework.security.oauth:spring-security-oauth2:${springOauthVersion}")
 
     // Third-party webjar dependencies
     compile("org.webjars:bootstrap:3.3.7")
 
+    // Test Dependencies
     testCompile("junit:junit:4.12")
 }
