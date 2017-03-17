@@ -3,5 +3,8 @@ management:
     enabled: true
 google:
   oauth2:
-    clientId: <YOUR_CLIENT_ID>
-    clientSecret:  <YOUR_CLIENT_SECRET>
+    accessTokenUri: https://www.googleapis.com/oauth2/v3/token
+    authorizationUri: https://accounts.google.com/o/oauth2/auth
+    clientId: ${GOOGLE_CLIENT_ID}
+    clientSecret: ${GOOGLE_CLIENT_SECRET}
+    redirectUri: http://localhost:8080/login

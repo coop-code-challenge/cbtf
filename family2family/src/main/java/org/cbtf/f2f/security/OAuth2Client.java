@@ -1,5 +1,6 @@
 package org.cbtf.f2f.security;
 
+import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,43 +11,52 @@ import org.springframework.security.oauth2.client.OAuth2RestOperations;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
 import org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeResourceDetails;
+import org.springframework.security.oauth2.common.AuthenticationScheme;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 
-import javax.annotation.Resource;
+import java.util.List;
 
-import static java.util.Arrays.asList;
-import static org.springframework.security.oauth2.common.AuthenticationScheme.form;
-
+/**
+ * The {@link OAuth2Client} holds the information needed to connect to Google's OAuth2 APIs
+ */
 @Configuration
 @EnableOAuth2Client
 public class OAuth2Client {
+
+    private static final List<String> OAUTH_2_SCOPES = Lists.newArrayList("openid", "email");
+
     @Value("${google.oauth2.clientId}")
     private String clientId;
 
     @Value("${google.oauth2.clientSecret}")
     private String clientSecret;
 
+    @Value("${google.oauth2.authorizationUri}")
+    private String authorizationUri;
+
+    @Value("${google.oauth2.accessTokenUri}")
+    private String accessTokenUri;
+
+    @Value("${google.oauth2.redirectUri}")
+    private String redirectUri;
+
     @Bean
     public OAuth2ProtectedResourceDetails googleOAuth2Details() {
         AuthorizationCodeResourceDetails googleOAuth2Details = new AuthorizationCodeResourceDetails();
-        googleOAuth2Details.setAuthenticationScheme(form);
-        googleOAuth2Details.setClientAuthenticationScheme(form);
+        googleOAuth2Details.setAuthenticationScheme(AuthenticationScheme.form);
+        googleOAuth2Details.setClientAuthenticationScheme(AuthenticationScheme.form);
         googleOAuth2Details.setClientId(clientId);
         googleOAuth2Details.setClientSecret(clientSecret);
-        googleOAuth2Details.setUserAuthorizationUri("https://accounts.google.com/o/oauth2/auth");
-        googleOAuth2Details.setAccessTokenUri("https://www.googleapis.com/oauth2/v3/token");
-        googleOAuth2Details.setScope(asList("openid"));
-        googleOAuth2Details.setPreEstablishedRedirectUri("http://localhost:8080/login");
+        googleOAuth2Details.setUserAuthorizationUri(authorizationUri);
+        googleOAuth2Details.setAccessTokenUri(accessTokenUri);
+        googleOAuth2Details.setScope(OAUTH_2_SCOPES);
+        googleOAuth2Details.setPreEstablishedRedirectUri(redirectUri);
         return googleOAuth2Details;
     }
 
-    @SuppressWarnings("SpringJavaAutowiringInspection") // Provided by Spring Boot
-    @Resource
-    private OAuth2ClientContext oAuth2ClientContext;
-
     @Bean
     @Scope(value = "session", proxyMode = ScopedProxyMode.INTERFACES)
-    public OAuth2RestOperations googleOAuth2RestTemplate() {
+    public OAuth2RestOperations googleOAuth2RestTemplate(OAuth2ClientContext oAuth2ClientContext) {
         return new OAuth2RestTemplate(googleOAuth2Details(), oAuth2ClientContext);
     }
 }
