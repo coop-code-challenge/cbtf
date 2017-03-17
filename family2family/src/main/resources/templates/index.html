@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>F2F</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Family 2 Family</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right" action="/login" method="GET">
+                <input class="btn btn-danger center-block" type="submit" value="Login" />
+            </form>
+            <form class="navbar-form navbar-right" action="/logout" method="post">
+                <input class="btn btn-danger center-block" type="submit" value="Logout" />
+            </form>
+        </div>
+    </div>
+</nav>
+
+</body>
+
+</html>

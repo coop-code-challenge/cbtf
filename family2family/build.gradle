@@ -1,6 +1,7 @@
 buildscript {
     ext {
         springBootVersion = '1.5.2.RELEASE'
+        springOauthVersion = '2.0.4.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -16,6 +17,13 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile("org.springframework.security.oauth:spring-security-oauth2:${springOauthVersion}")
+    compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
+
+    // Third-party webjar dependencies
+    compile("org.webjars:bootstrap:3.3.7")
 
     testCompile("junit:junit:4.12")
 }
