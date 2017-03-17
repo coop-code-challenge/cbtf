@@ -1,9 +1,4 @@
-package org.cbtf.f2f.helloworld.security;
-
-import static java.util.Arrays.asList;
-import static org.springframework.security.oauth2.common.AuthenticationScheme.form;
-
-import javax.annotation.Resource;
+package org.cbtf.f2f.security;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +11,11 @@ import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
 import org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeResourceDetails;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
+
+import javax.annotation.Resource;
+
+import static java.util.Arrays.asList;
+import static org.springframework.security.oauth2.common.AuthenticationScheme.form;
 
 @Configuration
 @EnableOAuth2Client

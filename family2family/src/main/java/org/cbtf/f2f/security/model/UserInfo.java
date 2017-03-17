@@ -1,13 +1,10 @@
-package org.cbtf.f2f.helloworld.security;
+package org.cbtf.f2f.security.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * Created by jkurtz on 3/16/2017.
- */
-
 public class UserInfo {
+
     private final String id;
     private final String name;
     private final String givenName;

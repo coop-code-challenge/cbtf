@@ -1,4 +1,4 @@
-package org.cbtf.f2f.helloworld.security;
+package org.cbtf.f2f.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

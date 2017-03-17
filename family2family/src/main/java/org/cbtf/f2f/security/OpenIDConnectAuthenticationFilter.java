@@ -1,4 +1,4 @@
-package org.cbtf.f2f.helloworld.security;
+package org.cbtf.f2f.security;
 
 import static java.util.Optional.empty;
 import static org.springframework.security.core.authority.AuthorityUtils.NO_AUTHORITIES;
@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.cbtf.f2f.security.model.UserInfo;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;

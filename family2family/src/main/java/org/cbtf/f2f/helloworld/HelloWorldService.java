@@ -1,6 +1,6 @@
 package org.cbtf.f2f.helloworld;
 
-import org.cbtf.f2f.helloworld.security.UserInfo;
+import org.cbtf.f2f.security.model.UserInfo;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
