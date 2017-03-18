@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("${org.cbtf.apiRoot}/hello")
-public class HelloWorldService {
+public class HelloWorldController {
 
     @GetMapping("/{name}")
     public String getHello(@PathVariable("name") String name) {
