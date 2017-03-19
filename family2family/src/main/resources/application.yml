@@ -1,3 +1,15 @@
 management:
   security:
     enabled: true
+google:
+  oauth2:
+    accessTokenUri: https://www.googleapis.com/oauth2/v3/token
+    authorizationUri: https://accounts.google.com/o/oauth2/auth
+    #Hard coded defaults for ease of development.
+    clientId: ${GOOGLE_CLIENT_ID:192263123742-0fbs59m5fscnfoc2trj91m0mmp9aceva.apps.googleusercontent.com}
+    clientSecret: ${GOOGLE_CLIENT_SECRET:LichVdx3CO3Avf7QUqfD04LQ}
+    redirectUri: http://localhost:8080/login
+    userInfoUri: https://www.googleapis.com/oauth2/v2/userinfo
+org:
+  cbtf:
+    apiRoot: /api
