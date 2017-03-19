@@ -1,6 +1,7 @@
 package org.cbtf.f2f.security;
 
 import org.cbtf.f2f.security.model.UserInfo;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
@@ -28,6 +29,9 @@ public class OpenIDConnectAuthenticationFilter extends AbstractAuthenticationPro
     @Resource
     private OAuth2RestOperations restTemplate;
 
+    @Value("${google.oauth2.userInfoUri}")
+    private String userInfoUri;
+
     OpenIDConnectAuthenticationFilter(String defaultFilterProcessesUrl) {
         super(defaultFilterProcessesUrl);
         setAuthenticationManager(AUTHENTICATION_MANAGER);
@@ -44,7 +48,7 @@ public class OpenIDConnectAuthenticationFilter extends AbstractAuthenticationPro
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
             throws AuthenticationException, IOException, ServletException {
         //TODO Swap to pull the UserInfo from restTemplate.getAccessToken().getAdditionalInformation().get("id_token");
-        final ResponseEntity<UserInfo> userInfoResponseEntity = restTemplate.getForEntity("https://www.googleapis.com/oauth2/v2/userinfo", UserInfo.class);
+        final ResponseEntity<UserInfo> userInfoResponseEntity = restTemplate.getForEntity(userInfoUri, UserInfo.class);
         UserInfo userInfo = userInfoResponseEntity.getBody();
         //TODO This is where we can verify the user has access to the application as well as set the granted authorities to indicate admin vs non admin
         return new PreAuthenticatedAuthenticationToken(userInfo, Optional.empty(), AuthorityUtils.NO_AUTHORITIES);
