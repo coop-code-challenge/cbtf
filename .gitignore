@@ -8,3 +8,6 @@ classes/
 !.idea/vcs.xml
 .gradle
 */build
+
+# Mac Files
+.DS_Store
