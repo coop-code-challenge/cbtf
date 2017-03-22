@@ -1,0 +1,9 @@
+/* The css file for the sign in page */
+.sign-in-button {
+    background: transparent;
+    border: none;
+}
+
+.logout-button-section {
+    display: none;
+}
