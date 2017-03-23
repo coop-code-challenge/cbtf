@@ -1,6 +1,10 @@
 management:
   security:
     enabled: true
+spring:
+  data:
+    rest:
+      basePath: /internal-api
 google:
   oauth2:
     accessTokenUri: https://www.googleapis.com/oauth2/v3/token
