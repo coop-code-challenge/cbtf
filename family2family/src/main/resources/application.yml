@@ -5,6 +5,12 @@ spring:
   data:
     rest:
       basePath: /internal-api
+  h2:
+    console:
+      enabled:
+        true
+      path:
+        /console
 google:
   oauth2:
     accessTokenUri: https://www.googleapis.com/oauth2/v3/token
