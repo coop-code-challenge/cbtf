@@ -45,7 +45,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 //Require authorization on all requests
                 .antMatcher("/**").authorizeRequests()
                 //Don't require auth to hit: /, /login, /webjars/**
-                .antMatchers("/", "/login**", "/webjars/**", "/js/**.jsx", "/favicon.ico").permitAll()
+                .antMatchers("/", "/login**", "/webjars/**", "/js/**.jsx", "/favicon.ico", "/css/*.css", "/image/*.png").permitAll()
                 //TODO add security role and restrictions for admin services
                 //Allow authenticated users to hit all other requests
                 .anyRequest().authenticated()

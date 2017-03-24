@@ -36,10 +36,7 @@ public class OAuth2Client {
 
     @Value("${google.oauth2.accessTokenUri}")
     private String accessTokenUri;
-
-    @Value("${google.oauth2.redirectUri}")
-    private String redirectUri;
-
+    
     @Bean
     public OAuth2ProtectedResourceDetails googleOAuth2Details() {
         AuthorizationCodeResourceDetails googleOAuth2Details = new AuthorizationCodeResourceDetails();
@@ -50,7 +47,6 @@ public class OAuth2Client {
         googleOAuth2Details.setUserAuthorizationUri(authorizationUri);
         googleOAuth2Details.setAccessTokenUri(accessTokenUri);
         googleOAuth2Details.setScope(OAUTH_2_SCOPES);
-        googleOAuth2Details.setPreEstablishedRedirectUri(redirectUri);
         return googleOAuth2Details;
     }
 
