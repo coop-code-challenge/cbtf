@@ -36,7 +36,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers("/favicon.ico");
         //TODO remove this when going to prod
         web.ignoring().antMatchers("/console/**");
-
     }
 
     @Override
