@@ -1,3 +1,4 @@
+
 class NavBarComponent extends React.Component {
     render() {
         return(
@@ -16,10 +17,22 @@ class NavBarComponent extends React.Component {
 }
 
 class AlreadySignedIn extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {person: []};
+    }
+
+    componentWillMount() {
+        $.getJSON('/api/user').then((data) => {
+            this.setState({person: data});
+        });
+    }
+
     render() {
         return(
             <div>
-                <span>Congrats, you are already signed in.</span>
+                <span>Congrats {this.state.person.givenName}, you are signed in.</span>
             </div>
         );
     }
