@@ -72,6 +72,9 @@ public class ChildDiagnosis {
 
         private Child child;
 
+        public PK() {
+        }
+
         public PK(Diagnosis diagnosis, Child child) {
             this.diagnosis = diagnosis;
             this.child = child;

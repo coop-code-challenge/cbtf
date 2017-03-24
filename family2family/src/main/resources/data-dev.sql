@@ -265,7 +265,7 @@ INSERT INTO DIAGNOSIS(DIAGNOSIS_ID, DESCRIPTION) VALUES
 
 --Dummy Data
 insert into users(id, admin, active) values('work@pls', false, false);
-insert into users(id, admin, active) values('work@gmail.com', true, null);
+insert into users(id, admin, active) values('work@gmail.com', true, true);
 
 --Contact #1
 insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
@@ -274,3 +274,32 @@ city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, sec
 values (1, 'John', 'Smith', TRUE, FALSE, FALSE,
 '8009999999', TRUE, NULL, FALSE,
 'St. Louis', 'MO', 'work@pls', TRUE, NULL, FALSE, 'I can be reached by email or SMS.', 'Great feedback from prior matches.');
+
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (1, FALSE, 946706400000, NULL, 'Tyler', 'Smith', 1);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (1, 45, 2);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (1, 7),
+(1, 53),
+(1, 54),
+(1, 73),
+(1, 74),
+(1, 76),
+(1, 79),
+(1, 89),
+(1, 109),
+(1, 126),
+(1, 140),
+(1, 142),
+(1, 143),
+(1, 145),
+(1, 173),
+(1, 174),
+(1, 193);
+
+insert into category_note(child_id, category_id, note)
+values (1, 1, 'Loss of balance and facial paralysis. Smile surgery where tongue nerve was used for smile.'),
+(1, 2, 'Surgery was only treatment. 2 resection surgeries.');

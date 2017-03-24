@@ -72,6 +72,9 @@ public class MentorMentee {
 
         private Contact mentee;
 
+        public PK() {
+        }
+
         public PK(Contact mentor, Contact mentee) {
             this.mentor = mentor;
             this.mentee = mentee;
