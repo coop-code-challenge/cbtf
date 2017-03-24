@@ -27,6 +27,10 @@ public class ChildSubcategory {
     @JoinColumn(name = Child.COLUMN_CHILD_ID)
     private Child child;
 
+    public ChildSubcategory() {
+
+    }
+
     public ChildSubcategory(Subcategory subcategory, Child child) {
         this.subcategory = subcategory;
         this.child = child;

@@ -68,6 +68,10 @@ public class Contact {
     @OneToMany(mappedBy = MentorMentee.COLUMN_MENTOR_ID)
     private List<MentorMentee> mentors;
 
+    public Contact() {
+
+    }
+
     public Contact(String firstName, String lastName, Boolean mentor, Boolean mentee, Boolean doNotContact,
                    String primaryPhoneNumber, Boolean primaryPhoneNumberVisibleToMatch, String secondaryPhoneNumber,
                    Boolean secondaryPhoneNumberVisibleToMatch, String city, String state, String primaryEmail,

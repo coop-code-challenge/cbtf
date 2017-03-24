@@ -35,6 +35,10 @@ public class CategoryNote {
 
     private String note;
 
+    public CategoryNote() {
+
+    }
+
     public CategoryNote(Category category, Child child, String note) {
         this.category = category;
         this.child = child;

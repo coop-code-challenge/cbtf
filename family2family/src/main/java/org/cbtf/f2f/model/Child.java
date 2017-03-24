@@ -49,6 +49,10 @@ public class Child {
     @OneToMany(mappedBy = ChildSubcategory.FIELD_CHILD)
     private Set<ChildSubcategory> subCategories;
 
+    public Child() {
+
+    }
+
     public Child(String first, String last, Long dateOfBirth, Long dateOfDeath, Boolean bereaved, Contact contact,
                  Set<CategoryNote> categoryNotes, Set<ChildDiagnosis> diagnoses, Set<ChildSubcategory> subCategories) {
         this.first = first;

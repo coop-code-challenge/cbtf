@@ -25,6 +25,10 @@ public class Category {
 
     private Boolean active;
 
+    public Category() {
+
+    }
+
     public Category(String description, Boolean active, List<Subcategory> subCategories) {
         this.description = description;
         this.active = active;

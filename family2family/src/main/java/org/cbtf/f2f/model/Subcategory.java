@@ -34,6 +34,10 @@ public class Subcategory {
     @JoinColumn(name = Category.COLUMN_CATEGORY_ID)
     private Category category;
 
+    public Subcategory() {
+
+    }
+
     public Subcategory(String description, Boolean active, Category category) {
         this.description = description;
         this.active = active;

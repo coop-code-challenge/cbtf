@@ -30,6 +30,10 @@ public class Diagnosis {
     @OneToMany(mappedBy = ChildDiagnosis.COLUMN_DIAGNOSIS_ID)
     private List<ChildDiagnosis> diagnoses;
 
+    public Diagnosis() {
+
+    }
+
     public Diagnosis(String description, List<ChildDiagnosis> diagnoses) {
         this.description = description;
         this.diagnoses = diagnoses;

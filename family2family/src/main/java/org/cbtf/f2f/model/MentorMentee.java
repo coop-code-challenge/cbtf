@@ -32,6 +32,10 @@ public class MentorMentee {
 
     private Long timeMatched;
 
+    public MentorMentee() {
+
+    }
+
     public MentorMentee(Contact mentor, Contact mentee, Long timeMatched) {
         this.mentor = mentor;
         this.mentee = mentee;

@@ -21,6 +21,10 @@ public class Users {
     @JoinColumn(name = Contact.COLUMN_PRIMARY_EMAIL)
     private Contact contact;
 
+    public Users() {
+
+    }
+
     public Users(String id, Boolean admin, Boolean active, Contact contact) {
         this.id = id;
         this.admin = admin;

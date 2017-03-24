@@ -32,6 +32,10 @@ public class ChildDiagnosis {
 
     private Integer ageOfDiagnosis;
 
+    public ChildDiagnosis() {
+
+    }
+
     public ChildDiagnosis(Diagnosis diagnosis, Child child, Integer ageOfDiagnosis) {
         this.diagnosis = diagnosis;
         this.child = child;
