@@ -27,7 +27,15 @@ org:
 ---
 
 spring:
+  profiles: local
+  datasource:
+    platform: dev
+---
+
+spring:
   profiles: develop
+  datasource:
+    platform: dev
 google:
   oauth2:
     redirectUri: http://f2f-app2.nisc.coop:8080/
@@ -35,6 +43,8 @@ google:
 
 spring:
   profiles: production
+  datasource:
+    platform: prod
 google:
   oauth2:
     redirectUri: http://f2f-app1.nisc.coop:8080/
