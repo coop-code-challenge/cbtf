@@ -266,3 +266,11 @@ INSERT INTO DIAGNOSIS(DIAGNOSIS_ID, DESCRIPTION) VALUES
 --Dummy Data
 insert into users(id, admin, active) values('work@pls', false, false);
 insert into users(id, admin, active) values('work@gmail.com', true, null);
+
+--Contact #1
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (1, 'John', 'Smith', TRUE, FALSE, FALSE,
+'8009999999', TRUE, NULL, FALSE,
+'St. Louis', 'MO', 'work@pls', TRUE, NULL, FALSE, 'I can be reached by email or SMS.', 'Great feedback from prior matches.');
