@@ -14,7 +14,7 @@ public class Category {
     /**
      * The column name for {@link #categoryId}.
      */
-    static final String COLUMN_CATEGORY_ID = "categoryId";
+    static final String COLUMN_CATEGORY_ID = "category_id";
 
     @Id
     @GeneratedValue
@@ -25,11 +25,18 @@ public class Category {
 
     private Boolean active;
 
+    public Category() {
+
+    }
+
+    public Category(String description, Boolean active, List<Subcategory> subCategories) {
+        this.description = description;
+        this.active = active;
+        this.subCategories = subCategories;
+    }
+
     @OneToMany(mappedBy = Subcategory.FIELD_CATEGORY)
     private List<Subcategory> subCategories;
-
-    @OneToMany(mappedBy = CategoryNote.FIELD_CATEGORY)
-    private List<CategoryNote> categoryNotes;
 
     /**
      * @return The unique identifier for a category.

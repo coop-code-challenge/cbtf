@@ -1,13 +1,13 @@
 package org.cbtf.f2f.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
- * An open ended category associated with a child (i.e. Physical Challenges, Educational Issues, Treatments, etc...).
- *
  * @author Matt Lievens
  */
 @Entity
+@IdClass(ChildDiagnosis.PK.class)
 public class ChildDiagnosis {
 
     /**
@@ -20,26 +20,26 @@ public class ChildDiagnosis {
      */
     static final String COLUMN_DIAGNOSIS_ID = "diagnosis";
 
-    @Id
-    @GeneratedValue
-    private Integer childDiagnosisId;
-
     @ManyToOne
+    @Id
     @JoinColumn(name = Diagnosis.COLUMN_DIAGNOSIS_ID)
     private Diagnosis diagnosis;
 
     @ManyToOne
+    @Id
     @JoinColumn(name = Child.COLUMN_CHILD_ID)
     private Child child;
 
     private Integer ageOfDiagnosis;
 
-    public Integer getChildDiagnosisId() {
-        return childDiagnosisId;
+    public ChildDiagnosis() {
+
     }
 
-    public void setChildDiagnosisId(Integer childDiagnosisId) {
-        this.childDiagnosisId = childDiagnosisId;
+    public ChildDiagnosis(Diagnosis diagnosis, Child child, Integer ageOfDiagnosis) {
+        this.diagnosis = diagnosis;
+        this.child = child;
+        this.ageOfDiagnosis = ageOfDiagnosis;
     }
 
     public Diagnosis getDiagnosis() {
@@ -65,4 +65,17 @@ public class ChildDiagnosis {
     public void setAgeOfDiagnosis(Integer ageOfDiagnosis) {
         this.ageOfDiagnosis = ageOfDiagnosis;
     }
+
+    public static class PK implements Serializable {
+
+        private Diagnosis diagnosis;
+
+        private Child child;
+
+        public PK(Diagnosis diagnosis, Child child) {
+            this.diagnosis = diagnosis;
+            this.child = child;
+        }
+    }
+
 }

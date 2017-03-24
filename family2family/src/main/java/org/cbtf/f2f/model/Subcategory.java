@@ -14,7 +14,7 @@ public class Subcategory {
     /**
      * The column name for {@link #subcategoryId}.
      */
-    static final String COLUMN_SUBCATEGORY = "subcategoryId";
+    static final String COLUMN_SUBCATEGORY = "subcategory_id";
 
     /**
      * The field name for {@link #category}.
@@ -34,8 +34,15 @@ public class Subcategory {
     @JoinColumn(name = Category.COLUMN_CATEGORY_ID)
     private Category category;
 
-    @OneToMany(mappedBy = ChildSubcategory.FIELD_SUBCATEGORY)
-    private List<ChildSubcategory> childSubcategories;
+    public Subcategory() {
+
+    }
+
+    public Subcategory(String description, Boolean active, Category category) {
+        this.description = description;
+        this.active = active;
+        this.category = category;
+    }
 
     /**
      * @return The unique identifier for a category detail.

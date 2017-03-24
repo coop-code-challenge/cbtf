@@ -1,13 +1,13 @@
 package org.cbtf.f2f.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
- * An open ended category associated with a child (i.e. Physical Challenges, Educational Issues, Treatments, etc...).
- *
  * @author Matt Lievens
  */
 @Entity
+@IdClass(MentorMentee.PK.class)
 public class MentorMentee {
 
     /**
@@ -20,26 +20,26 @@ public class MentorMentee {
      */
     static final String COLUMN_MENTOR_ID = "mentor";
 
-    @Id
-    @GeneratedValue
-    private Integer mentorMenteeId;
-
     @ManyToOne
+    @Id
     @JoinColumn(name = COLUMN_MENTOR_ID, referencedColumnName = Contact.COLUMN_CONTACT_ID)
     private Contact mentor;
 
     @ManyToOne
+    @Id
     @JoinColumn(name = COLUMN_MENTEE_ID, referencedColumnName = Contact.COLUMN_CONTACT_ID)
     private Contact mentee;
 
     private Long timeMatched;
 
-    public Integer getMentorMenteeId() {
-        return mentorMenteeId;
+    public MentorMentee() {
+
     }
 
-    public void setMentorMenteeId(Integer mentorMenteeId) {
-        this.mentorMenteeId = mentorMenteeId;
+    public MentorMentee(Contact mentor, Contact mentee, Long timeMatched) {
+        this.mentor = mentor;
+        this.mentee = mentee;
+        this.timeMatched = timeMatched;
     }
 
     public Contact getMentor() {
@@ -64,5 +64,17 @@ public class MentorMentee {
 
     public void setTimeMatched(Long timeMatched) {
         this.timeMatched = timeMatched;
+    }
+
+    public static class PK implements Serializable {
+
+        private Contact mentor;
+
+        private Contact mentee;
+
+        public PK(Contact mentor, Contact mentee) {
+            this.mentor = mentor;
+            this.mentee = mentee;
+        }
     }
 }
