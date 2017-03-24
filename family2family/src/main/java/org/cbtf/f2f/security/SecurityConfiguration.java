@@ -28,13 +28,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Override
+    //TODO remove this when going to prod
     public void configure(WebSecurity web) throws Exception{
-        web.ignoring().antMatchers("/");
-        web.ignoring().antMatchers("/login**");
-        web.ignoring().antMatchers("/webjars/**");
-        web.ignoring().antMatchers("/js/**.jsx");
-        web.ignoring().antMatchers("/favicon.ico");
-        //TODO remove this when going to prod
         web.ignoring().antMatchers("/console/**");
     }
 
@@ -50,6 +45,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 //Require authorization on all requests
                 .antMatcher("/**").authorizeRequests()
                 //Don't require auth to hit: /, /login, /webjars/**
+                .antMatchers("/", "/login**", "/webjars/**", "/js/**.jsx", "/favicon.ico").permitAll()
                 //TODO add security role and restrictions for admin services
                 //Allow authenticated users to hit all other requests
                 .anyRequest().authenticated()
