@@ -22,5 +22,5 @@ if [ "${localsha}" != "${originsha}" ]; then
     rm -f ../application.out
     rm -f ../application.err
     echo `date`" Attempting startup of new application"
-    java -jar cbtf/family2family/build/libs/*.jar --spring.profiles.active=production > ../application.out 2> ../application.err &
+    java -jar family2family/build/libs/*.jar --spring.profiles.active=production > ../application.out 2> ../application.err &
 fi
