@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * An open ended category associated with a child (i.e. Physical Challenges, Educational Issues, Treatments, etc...).
- *
  * @author Matt Lievens
  */
 
@@ -16,7 +14,7 @@ public class Child {
     /**
      * The column name for {@link #childId}.
      */
-    static final String COLUMN_CHILD_ID = "childId";
+    static final String COLUMN_CHILD_ID = "child_id";
 
     /**
      * The field name for {@link #contact}.
@@ -50,6 +48,19 @@ public class Child {
 
     @OneToMany(mappedBy = ChildSubcategory.FIELD_CHILD)
     private Set<ChildSubcategory> subCategories;
+
+    public Child(String first, String last, Long dateOfBirth, Long dateOfDeath, Boolean bereaved, Contact contact,
+                 Set<CategoryNote> categoryNotes, Set<ChildDiagnosis> diagnoses, Set<ChildSubcategory> subCategories) {
+        this.first = first;
+        this.last = last;
+        this.dateOfBirth = dateOfBirth;
+        this.dateOfDeath = dateOfDeath;
+        this.bereaved = bereaved;
+        this.contact = contact;
+        this.categoryNotes = categoryNotes;
+        this.diagnoses = diagnoses;
+        this.subCategories = subCategories;
+    }
 
     public Integer getChildId() {
         return childId;
@@ -105,5 +116,17 @@ public class Child {
 
     public void setContact(Contact contact) {
         this.contact = contact;
+    }
+
+    public Set<CategoryNote> getCategoryNotes() {
+        return categoryNotes;
+    }
+
+    public Set<ChildDiagnosis> getDiagnoses() {
+        return diagnoses;
+    }
+
+    public Set<ChildSubcategory> getSubCategories() {
+        return subCategories;
     }
 }

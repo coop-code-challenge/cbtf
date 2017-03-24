@@ -12,7 +12,12 @@ public class Contact {
     /**
      * The column name for {@link #contactId}.
      */
-    static final String COLUMN_CONTACT_ID = "contactId";
+    static final String COLUMN_CONTACT_ID = "contact_Id";
+
+    /**
+     * The column name for {@link #primaryEmail}.
+     */
+    static final String COLUMN_PRIMARY_EMAIL = "primary_Email";
 
     @Id
     @GeneratedValue
@@ -40,8 +45,8 @@ public class Contact {
     private String city;
 
     private String state;
-    @Column
-    //TODO: Mark this as required. Links to Users.userId
+
+    @Column(name = COLUMN_PRIMARY_EMAIL)
     private String primaryEmail;
 
     private Boolean primaryEmailVisibleToMatch;
@@ -62,6 +67,34 @@ public class Contact {
 
     @OneToMany(mappedBy = MentorMentee.COLUMN_MENTOR_ID)
     private List<MentorMentee> mentors;
+
+    public Contact(String firstName, String lastName, Boolean mentor, Boolean mentee, Boolean doNotContact,
+                   String primaryPhoneNumber, Boolean primaryPhoneNumberVisibleToMatch, String secondaryPhoneNumber,
+                   Boolean secondaryPhoneNumberVisibleToMatch, String city, String state, String primaryEmail,
+                   Boolean primaryEmailVisibleToMatch, String secondaryEmail, Boolean secondaryEmailVisibleToMatch,
+                   String contactNote, String adminNote, List<Child> children, List<MentorMentee> mentees,
+                   List<MentorMentee> mentors) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.mentor = mentor;
+        this.mentee = mentee;
+        this.doNotContact = doNotContact;
+        this.primaryPhoneNumber = primaryPhoneNumber;
+        this.primaryPhoneNumberVisibleToMatch = primaryPhoneNumberVisibleToMatch;
+        this.secondaryPhoneNumber = secondaryPhoneNumber;
+        this.secondaryPhoneNumberVisibleToMatch = secondaryPhoneNumberVisibleToMatch;
+        this.city = city;
+        this.state = state;
+        this.primaryEmail = primaryEmail;
+        this.primaryEmailVisibleToMatch = primaryEmailVisibleToMatch;
+        this.secondaryEmail = secondaryEmail;
+        this.secondaryEmailVisibleToMatch = secondaryEmailVisibleToMatch;
+        this.contactNote = contactNote;
+        this.adminNote = adminNote;
+        this.children = children;
+        this.mentees = mentees;
+        this.mentors = mentors;
+    }
 
     public Integer getContactId() {
         return contactId;
@@ -215,4 +248,11 @@ public class Contact {
         this.children = children;
     }
 
+    public List<MentorMentee> getMentees() {
+        return mentees;
+    }
+
+    public List<MentorMentee> getMentors() {
+        return mentors;
+    }
 }

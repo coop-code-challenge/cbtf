@@ -2,6 +2,8 @@ package org.cbtf.f2f.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 /**
  * @author Matt Lievens.
@@ -14,6 +16,17 @@ public class Users {
     private Boolean admin;
 
     private Boolean active;
+
+    @OneToOne
+    @JoinColumn(name = Contact.COLUMN_PRIMARY_EMAIL)
+    private Contact contact;
+
+    public Users(String id, Boolean admin, Boolean active, Contact contact) {
+        this.id = id;
+        this.admin = admin;
+        this.active = active;
+        this.contact = contact;
+    }
 
     public String getUserId() {
         return id;
@@ -37,5 +50,9 @@ public class Users {
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public Contact getContact() {
+        return contact;
     }
 }

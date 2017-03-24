@@ -1,6 +1,7 @@
 package org.cbtf.f2f.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * A note related to a child for a category.
@@ -8,38 +9,27 @@ import javax.persistence.*;
  * @author Matt Lievens
  */
 @Entity
+@IdClass(ChildSubcategory.PK.class)
 public class ChildSubcategory {
-
-    /**
-     * The field name for {@link #subcategory}.
-     */
-    static final String FIELD_SUBCATEGORY = "subcategory";
 
     /**
      * The field name for {@link #child}.
      */
     static final String FIELD_CHILD = "child";
 
-    @Id
-    @GeneratedValue
-    private Integer childCategoryId;
-
     @ManyToOne
+    @Id
     @JoinColumn(name = Subcategory.COLUMN_SUBCATEGORY)
     private Subcategory subcategory;
 
     @ManyToOne
+    @Id
     @JoinColumn(name = Child.COLUMN_CHILD_ID)
     private Child child;
 
-    private String note;
-
-    public Integer getCategoryNoteId() {
-        return childCategoryId;
-    }
-
-    public void setChildCategoryId(Integer childCategoryId) {
-        this.childCategoryId = childCategoryId;
+    public ChildSubcategory(Subcategory subcategory, Child child) {
+        this.subcategory = subcategory;
+        this.child = child;
     }
 
     public Subcategory getSubcategory() {
@@ -58,11 +48,16 @@ public class ChildSubcategory {
         this.child = child;
     }
 
-    public String getNote() {
-        return note;
-    }
 
-    public void setNote(String note) {
-        this.note = note;
+    public static class PK implements Serializable {
+
+        private Subcategory subcategory;
+
+        private Child child;
+
+        public PK(Subcategory subcategory, Child child) {
+            this.subcategory = subcategory;
+            this.child = child;
+        }
     }
 }

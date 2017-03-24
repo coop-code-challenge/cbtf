@@ -14,7 +14,7 @@ public class Diagnosis {
     /**
      * The column name for {@link #id}.
      */
-    static final String COLUMN_DIAGNOSIS_ID = "diagnosisId";
+    static final String COLUMN_DIAGNOSIS_ID = "diagnosis_Id";
 
     @Id
     @GeneratedValue
@@ -23,9 +23,17 @@ public class Diagnosis {
 
     private String description;
 
+    public Diagnosis(String description) {
+        this.description = description;
+    }
 
     @OneToMany(mappedBy = ChildDiagnosis.COLUMN_DIAGNOSIS_ID)
     private List<ChildDiagnosis> diagnoses;
+
+    public Diagnosis(String description, List<ChildDiagnosis> diagnoses) {
+        this.description = description;
+        this.diagnoses = diagnoses;
+    }
 
     /**
      * Generated Id.
@@ -57,5 +65,9 @@ public class Diagnosis {
      */
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<ChildDiagnosis> getDiagnoses() {
+        return diagnoses;
     }
 }
