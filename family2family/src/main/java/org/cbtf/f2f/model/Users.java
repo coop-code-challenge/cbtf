@@ -13,6 +13,10 @@ public class Users {
     @Id
     private String id;
 
+    private String firstName;
+
+    private String lastName;
+
     private Boolean admin;
 
     private Boolean active;
@@ -25,8 +29,10 @@ public class Users {
 
     }
 
-    public Users(String id, Boolean admin, Boolean active, Contact contact) {
+    public Users(String id, String firstName, String lastName, Boolean admin, Boolean active, Contact contact) {
         this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.admin = admin;
         this.active = active;
         this.contact = contact;
@@ -58,5 +64,21 @@ public class Users {
 
     public Contact getContact() {
         return contact;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
