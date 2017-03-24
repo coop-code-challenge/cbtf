@@ -5,6 +5,8 @@ spring:
   data:
     rest:
       basePath: /internal-api
+  datasource:
+    platform: dev
   h2:
     console:
       enabled:
@@ -18,7 +20,6 @@ google:
     #Hard coded defaults for ease of development.
     clientId: ${GOOGLE_CLIENT_ID:192263123742-0fbs59m5fscnfoc2trj91m0mmp9aceva.apps.googleusercontent.com}
     clientSecret: ${GOOGLE_CLIENT_SECRET:LichVdx3CO3Avf7QUqfD04LQ}
-    redirectUri: http://localhost:8080/login
     userInfoUri: https://www.googleapis.com/oauth2/v2/userinfo
 org:
   cbtf:
@@ -27,24 +28,4 @@ org:
 ---
 
 spring:
-  profiles: local
-  datasource:
-    platform: dev
----
-
-spring:
-  profiles: develop
-  datasource:
-    platform: dev
-google:
-  oauth2:
-    redirectUri: http://f2f-app2.nisc.coop:8080/
----
-
-spring:
   profiles: production
-  datasource:
-    platform: prod
-google:
-  oauth2:
-    redirectUri: http://f2f-app1.nisc.coop:8080/
