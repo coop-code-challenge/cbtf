@@ -38,14 +38,14 @@ class AlreadySignedIn extends React.Component {
     }
 }
 
-class AlertComponent extends React.component{
+class AlertComponent extends React.Component{
     render(){
         return (
             <div>
                 <h3>this will be the date</h3>
                 <p>this will be the message of the alert.</p>
             </div>
-        )
+        );
     }
 }
 
