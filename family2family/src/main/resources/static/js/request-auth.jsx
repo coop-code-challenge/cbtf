@@ -1,21 +1,4 @@
 
-class NavBarComponent extends React.Component {
-    render() {
-        return(
-            <nav className="navbar navbar-default">
-                <div className="container-fluid">
-                    <ul className="nav navbar-nav">
-                        <li className="active"><a href="#">Home</a></li>
-                        <li><a href="#Contact Entry">Contact Entry</a></li>
-                        <li><a href="#Find a Mentor">Find a Mentor</a></li>
-                        <li><a href="#Admin Settings">Admin Settings</a></li>
-                    </ul>
-                </div>
-            </nav>
-        )
-    }
-}
-
 class AlreadySignedIn extends React.Component {
     constructor(props) {
         super(props);
@@ -43,7 +26,6 @@ class AppContent extends React.Component {
     render() {
         return (
             <div>
-                <NavBarComponent />
                 <AlreadySignedIn />
             </div>
         );
