@@ -1,10 +1,14 @@
 /* The css file for the main application */
 .MatchContact {
     background-color: white;
-    border: 2px black;
+    border: 2px solid black;
     text-align: center;
     padding: 3px;
-    border-style: double;
+    margin-left: 15%;
+}
+.NotesBox{
+    background-color: white;
+    border: 2px solid black;
     margin-left: 15%;
 }
 
@@ -16,4 +20,9 @@
 
 .rowOne {
     width: 100%;
+}
+
+.notes-textarea {
+    width: 100%;
+    height: 80%;
 }

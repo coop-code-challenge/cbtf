@@ -59,11 +59,11 @@ class Notes extends React.Component{
     render(){
         return(
             <div className="componentBox">
-            <div>
-                <p>
+            <div className="NotesBox">
+                <h3>
                     My Notes:
-                </p>
-                <textarea rows="6" cols="50">
+                </h3>
+                <textarea rows="6" cols="50" className="notes-textarea">
                 </textarea>
             </div>
         </div>);
