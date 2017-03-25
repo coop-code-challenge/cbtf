@@ -4,7 +4,10 @@ class NavBarComponent extends React.Component {
         return(
             <nav className="navbar navbar-default">
                 <div className="container-fluid">
-                   <h1>Admin</h1>
+                    <ul className="nav navbar-nav">
+                       <li><a href="">Users</a></li>
+                       <li><a href="">Reference Tables</a></li>
+                   </ul>
                 </div>
             </nav>
         )
