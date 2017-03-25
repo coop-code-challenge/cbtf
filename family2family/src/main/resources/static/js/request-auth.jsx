@@ -32,22 +32,9 @@ class AlreadySignedIn extends React.Component {
     render() {
         return(
             <div>
-                <span>Congrats {this.state.person.givenName}, you are a Mentor/Mentee.</span>
+                <span>{this.state.person.givenName}, contact an admin to set up your account.</span>
             </div>
         );
-    }
-}
-
-class AlertComponent extends React.Component{
-    render() {
-        return (
-            <div>
-                <h3>The will be the date of the alert</h3>
-                <p>
-                    this will be the message of the alert.
-                </p>
-            </div>
-        )
     }
 }
 
@@ -58,7 +45,6 @@ class AppContent extends React.Component {
             <div>
                 <NavBarComponent />
                 <AlreadySignedIn />
-                <AlertComponent />
             </div>
         );
     }

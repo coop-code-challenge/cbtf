@@ -1,5 +1,6 @@
 package org.cbtf.f2f.util;
 
+import org.cbtf.f2f.security.model.UserInfo;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 
@@ -15,5 +16,10 @@ public class LoggedInUtil {
                 !(SecurityContextHolder.getContext().getAuthentication()
                         instanceof AnonymousAuthenticationToken);
 
+    }
+
+    public static UserInfo getLoggedInUser(){
+        UserInfo userInfo = (UserInfo) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return userInfo;
     }
 }
