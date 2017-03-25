@@ -19,7 +19,7 @@ public class ClientController {
     @RequestMapping("/")
     public String getHomePage() {
         if (LoggedInUtil.isUserLoggedIn()) {
-            return "main";
+            return "external-main";
         } else {
             return "sign-in";
         }
