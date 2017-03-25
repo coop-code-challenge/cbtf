@@ -1,3 +1,20 @@
+class User extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {username: "", name: "", adminchecked: {false}, activechecked: {false}};
+    }
+    render() {
+        return(
+            <div className="container-fluid">
+                <div className="container-fluid">{this.props.username}</div>
+                <div className="container-fluid">{this.props.name}</div>
+                <input name="admin" type="checkbox" checked={this.props.adminchecked} onClick={this.props.adminchecked}/>
+                <input name="active" type="checkbox" checked={this.props.activechecked} />
+            </div>
+        )
+    }
+}
 
 class NavBarComponent extends React.Component {
     render() {
@@ -89,6 +106,7 @@ class AppContent extends React.Component {
             <div>
                 <NavBarComponent />
                 <TabBarComponent/>
+                <UserTable />
                 <EditUserRow  userid="" />
             </div>
         );
