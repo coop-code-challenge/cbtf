@@ -2,20 +2,42 @@ class User extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {username: "", name: "", adminchecked: {false}, activechecked: {false}};
+        this.state = {userID: "+ Add User", username: "", adminchecked: {false}, activechecked: {false}};
     }
+
     render() {
         return(
-            <div className="container-fluid">
-                <div className="container-fluid">{this.props.username}</div>
-                <div className="container-fluid">{this.props.name}</div>
-                <input name="admin" type="checkbox" checked={this.props.adminchecked} onClick={this.props.adminchecked}/>
-                <input name="active" type="checkbox" checked={this.props.activechecked} />
-            </div>
+            <tr>
+                <td>{this.props.userID}</td>
+                <td>{this.props.username}</td>
+                <td>{this.props.adminchecked}</td>
+                <td>{this.props.activechecked}</td>
+            </tr>
         )
     }
 }
 
+class UserTable extends React.Component {
+    render() {
+        return(
+            <div class="container">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Administrator</th>
+                        <th>Active</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <User userID="+ Add User" username="" adminchecked={false} activechecked={true} />
+                    </tbody>
+                </table>
+            </div>
+        )
+    }
+}
 class NavBarComponent extends React.Component {
     render() {
         return(
@@ -37,7 +59,7 @@ class AppContent extends React.Component {
         return (
             <div>
                 <NavBarComponent />
-                <User className="container-fluid" username="koryten" name="Kory" adminchecked="true" activechecked="true" />
+                <UserTable />
             </div>
         );
     }
