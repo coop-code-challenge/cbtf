@@ -274,8 +274,6 @@ insert into users(id, admin, active, first_name, last_name) values('theismanj@gm
 insert into users(id, admin, active, first_name, last_name) values('toscott1@gmail.com', true, true, 'Tony', 'Scott');
 
 
---insert into users(id, admin, active) values('1234', true, true);
-
 --Contact #1
 insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
 primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
