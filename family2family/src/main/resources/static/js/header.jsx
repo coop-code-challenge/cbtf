@@ -1,11 +1,17 @@
 class HeaderComponent extends React.Component {
     render() {
         return(
-            <nav className="navbar navbar-inverse navbar-fixed-top">
+            <nav className="navbar">
                 <div className="container">
                     <div className="navbar-header">
-                        <a className="navbar-brand" href="#">Family 2 Family</a>
-                        <a className="navbar-brand" href="#">//Administrator Homepage</a>
+                        <div id="logo-pic">
+                            <img src="/image/f2f-logo.png" />
+                        </div>
+
+                        <div id="site-title">
+                            <div id="sitewise-title"> <a className="navbar-brand" href="/">Childrens Brain Tumor Foundation</a></div>
+                            <div id="page-title"><a className="navbar-brand" href="#"></a></div>
+                        </div>
                     </div>
                     <div id="navbar" className="navbar-collapse collapse">
                         <form className="navbar-form navbar-right logout-button-section" action="/logout" method="post">

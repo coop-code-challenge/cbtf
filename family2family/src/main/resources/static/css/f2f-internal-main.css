@@ -1,0 +1,34 @@
+/* The css file for the main application */
+
+
+#logo-pic {
+    float: left;
+}
+
+#site-title {
+    float: left;
+    font-family:'sans-serif';
+    padding-left: 1em;
+}
+
+.navbar-brand {
+    font-size: 2em !important;
+}
+
+.navbar-nav li a {
+    border-radius: 5px !important;
+    background-color: #337ab7 !important;
+    color: #ffffff !important;
+    margin: 5px;
+}
+
+.navbar-nav li a:hover {
+    border-radius: 5px !important;
+    background-color: #23527c !important;
+}
+
+#footer {
+    background-color: #337ab7;
+    color: white;
+    height: 200px;
+}

@@ -2,7 +2,7 @@
 class NavBarComponent extends React.Component {
     render() {
         return(
-            <nav className="navbar navbar-default">
+            <nav className="navbar">
                 <div className="container-fluid">
                     <ul className="nav navbar-nav">
                         <li className="active"><a href="#">Home</a></li>
@@ -29,21 +29,17 @@ class AlreadySignedIn extends React.Component {
         });
     }
 
-    render() {
-        return(
-            <div>
-                <span>Congrats {this.state.person.givenName}, you are signed in.</span>
-            </div>
-        );
-    }
+
+
+
 }
 
 class AlertComponent extends React.Component{
     render(){
         return (
             <div>
-                <h3>this will be the date</h3>
-                <p>this will be the message of the alert.</p>
+                <h3>Date</h3>
+                <p>Message</p>
             </div>
         );
     }
@@ -56,7 +52,7 @@ class AppContent extends React.Component {
         return (
             <div>
                 <NavBarComponent />
-                <AlreadySignedIn />
+                <h2>Updates and Alerts</h2>
                 <AlertComponent />
             </div>
         );
