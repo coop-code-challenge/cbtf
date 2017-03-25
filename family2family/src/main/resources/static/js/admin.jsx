@@ -2,15 +2,37 @@ class User extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {userID: "+ Add User", username: "", adminchecked: {false}, activechecked: {false}};
+        this.state = {userid: "", username: "", adminchecked: {false}, activechecked: {false}};
     }
+
     render() {
         return(
-            <div className="container-fluid">
-                <div className="container-fluid">{this.props.username}</div>
-                <div className="container-fluid">{this.props.name}</div>
-                <input name="admin" type="checkbox" checked={this.props.adminchecked} onClick={this.props.adminchecked}/>
-                <input name="active" type="checkbox" checked={this.props.activechecked} />
+            <div className="row" data-toggle="collapse">
+                <div className="col-sm-3">{this.props.userid}</div>
+                <div className="col-sm-3">{this.props.username}</div>
+                <div className="col-sm-3">
+                    <input type="checkbox" name="admin" checked={this.props.adminchecked} disabled={true}/>
+                </div>
+                <div className="col-sm-3">
+                    <input type="checkbox" name="active" checked={this.props.activechecked} disabled={true}/>
+                </div>
+            </div>
+        )
+    }
+}
+class UserTable extends React.Component {
+    render() {
+        return(
+            <div class="container">
+                <div className="row">
+                    <div className="col-sm-3 bold">User ID</div>
+                    <div className="col-sm-3 bold">Name</div>
+                    <div className="col-sm-3 bold">Administrator</div>
+                    <div className="col-sm-3 bold">Active?</div>
+                </div>
+                <User userid="WADE123" username="Wade Iwata" adminchecked={false} activechecked={true} />
+                <User userid="WADE123" username="Wade Iwata" adminchecked={false} activechecked={true} />
+                <User userid="WADE123" username="Wade Iwata" adminchecked={false} activechecked={true} />
             </div>
         )
     }
@@ -48,6 +70,11 @@ class EditUserRow extends React.Component {
         this.state = {userid:"", fname:"", lname:"", admin:{true}, activeUser:{false}};
     }
 
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
+
     render() {
         return(
             <div class="editUserRow" className="editUserRow">
@@ -55,34 +82,34 @@ class EditUserRow extends React.Component {
                     <div className="form-group">
                         <label className="control-label col-sm-2" for="userid">User ID: </label>
                         <div className="col-sm-3">
-                            <input type="text" className="form-control" name="userid" value={this.props.userid}></input>
+                            <input type="text" className="form-control" name="userid" value={this.props.userid} onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div className="form-group">
                         <label className="control-label col-sm-2" for="fname">First Name:</label>
                         <div className="col-sm-3">
-                            <input type="text" className="form-control" name="fname" value={this.state.fname}></input>
+                            <input type="text" className="form-control" name="fname" value={this.state.fname} onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div className="form-group">
                         <label className="control-label col-sm-2" for="lname">Last Name: </label>
                         <div className="col-sm-3">
-                            <input type="text" className="form-control" name="lname" value={this.state.lname}></input>
+                            <input type="text" className="form-control" name="lname" value={this.state.lname} onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div className="form-group">
                         <label className="control-label col-md-2" for="admin">Administrator: </label>
                         <div className="col-sm-3">
                             <div className="checkbox">
-                                <input type="checkbox" name="admin" value={this.state.admin}></input>
+                                <input type="checkbox" name="admin" value={this.state.admin} onChange={this.handleChange}/>
                             </div>
                         </div>
                     </div>
                     <div className="form-group">
-                        <label className="control-label col-md-2" for="admin">Active: </label>
+                        <label className="control-label col-md-2" for="active">Active: </label>
                         <div className="col-sm-3">
                             <div className="checkbox">
-                                <input type="checkbox" name="admin" value={this.state.active}></input>
+                                <input type="checkbox" name="active" value={this.state.active} onChange={this.handleChange}/>
                             </div>
                         </div>
                     </div>
@@ -106,6 +133,7 @@ class AppContent extends React.Component {
                 <TabBarComponent/>
                 <UserTable />
                 <EditUserRow  userid="" />
+
             </div>
         );
     }
