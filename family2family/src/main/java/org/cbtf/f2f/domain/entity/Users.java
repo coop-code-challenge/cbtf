@@ -83,19 +83,4 @@ public class Users {
         this.lastName = lastName;
     }
 
-    public static class PK implements Serializable {
-
-        private String id;
-
-        public PK() {
-        }
-
-        public PK(String id) {
-            this.id = id;
-        }
-
-        public String getUser() {
-            return id;
-        }
-    }
 }
