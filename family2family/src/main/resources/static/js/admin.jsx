@@ -1,3 +1,42 @@
+class User extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {userid: "", username: "", adminchecked: {false}, activechecked: {false}};
+    }
+
+    render() {
+        return(
+            <div className="row" data-toggle="collapse">
+                <div className="col-sm-3">{this.props.userid}</div>
+                <div className="col-sm-3">{this.props.username}</div>
+                <div className="col-sm-3">
+                    <input type="checkbox" name="admin" checked={this.props.adminchecked} disabled={true}/>
+                </div>
+                <div className="col-sm-3">
+                    <input type="checkbox" name="active" checked={this.props.activechecked} disabled={true}/>
+                </div>
+            </div>
+        )
+    }
+}
+class UserTable extends React.Component {
+    render() {
+        return(
+            <div class="container">
+                <div className="row">
+                    <div className="col-sm-3 bold">User ID</div>
+                    <div className="col-sm-3 bold">Name</div>
+                    <div className="col-sm-3 bold">Administrator</div>
+                    <div className="col-sm-3 bold">Active?</div>
+                </div>
+                <User userid="WADE123" username="Wade Iwata" adminchecked={false} activechecked={true} />
+                <User userid="WADE123" username="Wade Iwata" adminchecked={false} activechecked={true} />
+                <User userid="WADE123" username="Wade Iwata" adminchecked={false} activechecked={true} />
+            </div>
+        )
+    }
+}
 
 class NavBarComponent extends React.Component {
     render() {
@@ -94,7 +133,9 @@ class AppContent extends React.Component {
             <div>
                 <NavBarComponent />
                 <TabBarComponent/>
+                <UserTable />
                 <EditUserRow  userid="" />
+
             </div>
         );
     }
