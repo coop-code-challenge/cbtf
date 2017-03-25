@@ -26,3 +26,9 @@
     border-radius: 5px !important;
     background-color: #23527c !important;
 }
+
+#footer {
+    background-color: #337ab7;
+    color: white;
+    height: 200px;
+}
