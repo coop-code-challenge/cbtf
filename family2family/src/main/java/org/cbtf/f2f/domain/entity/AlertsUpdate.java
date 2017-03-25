@@ -20,12 +20,17 @@ public class AlertsUpdate {
     private Date dateTime;
 
     public AlertsUpdate() {
-
+        this.message = "A generic constructor was called";
     }
 
     public AlertsUpdate(String message, Date dateTime) {
         this.message = message;
         this.dateTime = dateTime;
+    }
+
+    public AlertsUpdate(String message) {
+        this.message = message;
+        this.dateTime = null;
     }
 
     public Integer getAlertID() {
