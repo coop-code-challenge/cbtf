@@ -2,26 +2,35 @@ class User extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {userid: "", username: "", adminchecked: {false}, activechecked: {false}};
+        this.state = {userid: "", username: "", adminchecked: {false}, activechecked: {false}, showReply: {false}};
+    }
+
+    onClick(e){
+        e.preventDefault();
+        this.setState({showReply: !this.state.showReply})
     }
 
     render() {
         return(
-            <div className="row">
-                <div className="col-sm-3">{this.props.userid}</div>
-                <div className="col-sm-3">{this.props.username}</div>
-                <div className="col-sm-3">
-                    <input type="checkbox" name="admin" checked={this.props.adminchecked} disabled={true}/>
-                </div>
-                <div className="col-sm-3">
-                    <input type="checkbox" name="active" checked={this.props.activechecked} disabled={true}/>
-                </div>
-                <EditUserRow id="editdata" className="collapse"/>
+            <div>
+                <a className="row" data-toggle="collapse" onClick={this.onClick.bind(this)}>
+                    <div className="col-sm-3">{this.props.userid}</div>
+                    <div className="col-sm-3">{this.props.username}</div>
+                    <div className="col-sm-3">
+                        <input type="checkbox" name="admin" checked={this.props.adminchecked} disabled={true}/>
+                    </div>
+                    <div className="col-sm-3">
+                        <input type="checkbox" name="active" checked={this.props.activechecked} disabled={true}/>
+                    </div>
+
+                </a>
+                {this.state.showReply && <EditUserRow />}
             </div>
         )
     }
 }
 class UserTable extends React.Component {
+
     render() {
         return(
             <div class="container">
@@ -56,6 +65,7 @@ class NavBarComponent extends React.Component {
 }
 
 class TabBarComponent extends React.Component {
+
     render() {
         return(
             <ul className="nav nav-tabs">
@@ -80,7 +90,7 @@ class EditUserRow extends React.Component {
     render() {
         return(
             <div class="editUserRow" className="editUserRow">
-                <form className="form-horizontal">
+                <form className="form-horizontal" >
                     <div className="form-group">
                         <label className="control-label col-sm-2" for="userid">User ID: </label>
                         <div className="col-sm-3">
@@ -131,10 +141,11 @@ class AppContent extends React.Component {
     render() {
         return (
             <div>
+
                 <NavBarComponent />
                 <TabBarComponent/>
                 <UserTable />
-                <EditUserRow  userid="" />
+
 
             </div>
         );
