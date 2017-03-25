@@ -10,12 +10,12 @@ class HeaderComponent extends React.Component {
 
                         <div id="site-title">
                             <div id="sitewise-title"> <a className="navbar-brand" href="/">Childrens Brain Tumor Foundation</a></div>
-                            <div id="page-title"><a className="navbar-brand" href="#"></a></div>
+                            <div id="page-title"><a className="navbar-brand" href="#">Welcome!</a></div>
                         </div>
                     </div>
                     <div id="navbar" className="navbar-collapse collapse">
                         <form className="navbar-form navbar-right logout-button-section" action="/logout" method="post">
-                            <input className="btn btn-danger center-block" type="submit" value="Logout" />
+                            <input className="btn btn-danger center-block" id="logout-button" type="submit" value="Logout" />
                         </form>
                     </div>
                 </div>
