@@ -80,9 +80,12 @@ public class MentorMentee {
             this.mentee = mentee;
         }
 
-        @Override
-        public String toString(){
-            return mentor.getContactId() + "|" + mentee.getContactId();
+        public Contact getMentor() {
+            return mentor;
+        }
+
+        public Contact getMentee() {
+            return mentee;
         }
     }
 }

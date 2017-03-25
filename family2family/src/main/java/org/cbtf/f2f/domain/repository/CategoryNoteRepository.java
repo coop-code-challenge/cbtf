@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "CategoryNote", path = "CategoryNote")
-public interface CategoryNoteRepository extends CrudRepository<CategoryNote, Integer> {
+public interface CategoryNoteRepository extends CrudRepository<CategoryNote, CategoryNote.PK> {
 
 
 }

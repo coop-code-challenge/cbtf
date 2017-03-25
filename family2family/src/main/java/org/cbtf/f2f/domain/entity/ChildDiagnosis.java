@@ -79,6 +79,14 @@ public class ChildDiagnosis {
             this.diagnosis = diagnosis;
             this.child = child;
         }
+
+        public Diagnosis getDiagnosis() {
+            return diagnosis;
+        }
+
+        public Child getChild() {
+            return child;
+        }
     }
 
 }

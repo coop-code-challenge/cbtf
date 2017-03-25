@@ -11,14 +11,14 @@ import java.io.Serializable;
 import java.util.regex.Pattern;
 
 @Component
-public class MontorMenteePKConverter implements BackendIdConverter{
+public class MentorMenteePKConverter implements BackendIdConverter {
     private static final Pattern DELIMITER = Pattern.compile("\\|");
 
     @Autowired
     private ContactRepository contactRepository;
 
     @Override
-    public Serializable fromRequestId(String id, Class<?> entityType){
+    public Serializable fromRequestId(String id, Class<?> entityType) {
         String[] keyParts = DELIMITER.split(id);
         Integer mentorId = Integer.valueOf(keyParts[0]);
         Integer menteeId = Integer.valueOf(keyParts[1]);
@@ -29,8 +29,9 @@ public class MontorMenteePKConverter implements BackendIdConverter{
     }
 
     @Override
-    public String toRequestId(Serializable id, Class<?> entityType){
-        return id.toString();
+    public String toRequestId(Serializable id, Class<?> entityType) {
+        MentorMentee.PK mentorMenteePK = (MentorMentee.PK) id;
+        return mentorMenteePK.getMentor().getContactId() + "|" + mentorMenteePK.getMentee().getContactId();
     }
 
     @Override

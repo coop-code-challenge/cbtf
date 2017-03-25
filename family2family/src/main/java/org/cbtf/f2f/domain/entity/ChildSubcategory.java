@@ -67,9 +67,12 @@ public class ChildSubcategory {
             this.child = child;
         }
 
-        @Override
-        public String toString() {
-            return child.getChildId() + "|" + subcategory.getSubcategoryId();
+        public Subcategory getSubcategory() {
+            return subcategory;
+        }
+
+        public Child getChild() {
+            return child;
         }
     }
 }

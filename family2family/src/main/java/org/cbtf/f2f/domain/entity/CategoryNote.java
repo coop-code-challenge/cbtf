@@ -81,6 +81,14 @@ public class CategoryNote {
             this.category = category;
             this.child = child;
         }
+
+        public Category getCategory() {
+            return category;
+        }
+
+        public Child getChild() {
+            return child;
+        }
     }
 
 }
