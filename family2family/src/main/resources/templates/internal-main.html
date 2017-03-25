@@ -31,6 +31,12 @@
 <script type="text/babel" src="../static/js/footer.jsx" th:src="@{/js/footer.jsx}"></script>
 <script type="text/babel" src="../static/js/internal-main.jsx" th:src="@{/js/internal-main.jsx}"></script>
 
+<!-- this script is to change the page-title class on Internal main page -->
+<script>
+    $(document).ready(function(){
+        $("#site-title #page-title a").text("Administrator Homepage");
+    });
+</script>
 </body>
 
 </html>

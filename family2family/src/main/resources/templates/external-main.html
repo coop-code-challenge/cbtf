@@ -30,6 +30,12 @@
 <script type="text/babel" src="../static/js/header.jsx" th:src="@{/js/header.jsx}"></script>
 <script type="text/babel" src="../static/js/internal-main.jsx" th:src="@{/js/external-main.jsx}"></script>
 
+<!-- this script is to change the page-title class on External main page -->
+<script>
+    $(document).ready(function(){
+        $("#site-title #page-title a").text("Mentor/Mentee Information Form");
+    });
+</script>
 </body>
 
 </html>
