@@ -10,7 +10,7 @@ class HeaderComponent extends React.Component {
 
                         <div id="site-title">
                             <div id="sitewise-title"> <a className="navbar-brand" href="/">Childrens Brain Tumor Foundation</a></div>
-                            <div id="page-title"><a className="navbar-brand" href="#">Administrator Homepage</a></div>
+                            <div id="page-title"><a className="navbar-brand" href="#"></a></div>
                         </div>
                     </div>
                     <div id="navbar" className="navbar-collapse collapse">

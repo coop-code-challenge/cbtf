@@ -269,7 +269,7 @@ insert into users(id, admin, active) values('work@gmail.com', true, true);
 insert into users(id, admin, active) values('bafz86@gmail.com', true, true);
 insert into users(id, admin, active) values('fabirk93@gmail.com',true, true);
 insert into users(id, admin, active) values('kylemiller457@gmail.com',false, true);
-insert into users(id, admin, active) values('thanlone1995@gmail.com',false, true);
+insert into users(id, admin, active) values('thanlone1995@gmail.com',true, true);
 
 
 --Contact #1

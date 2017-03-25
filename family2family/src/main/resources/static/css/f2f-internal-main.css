@@ -15,20 +15,14 @@
     font-size: 2em !important;
 }
 
-.navbar-nav li {
-    border-radius: 5%;
+.navbar-nav li a {
+    border-radius: 5px !important;
     background-color: #337ab7 !important;
+    color: #ffffff !important;
     margin: 5px;
 }
 
-.navbar-nav li:hover {
-    background-color: #74a9d8 !important;
-}
-
-.navbar-nav li a{
-    color: #ffffff !important;
-}
-
 .navbar-nav li a:hover {
-    background-color: #74a9d8 !important;
+    border-radius: 5px !important;
+    background-color: #23527c !important;
 }
