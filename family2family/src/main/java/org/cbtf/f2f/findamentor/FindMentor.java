@@ -30,6 +30,7 @@ public class FindMentor {
     @Autowired
     private UsersRepository userRepo;
 
+
     @Autowired
     private ContactRepository contactRepo;
 
@@ -47,6 +48,7 @@ public class FindMentor {
             Set<ChildDiagnosis> diags = aChildren.getDiagnoses();
             allDiags.addAll(diags);
         }
+
 
         Iterable<Child> allChildren = childRepo.findAll();
 
@@ -72,4 +74,5 @@ public class FindMentor {
             return userOfMatch;
         }
     }
+
 }
