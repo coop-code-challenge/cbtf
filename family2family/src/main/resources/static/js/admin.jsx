@@ -31,7 +31,7 @@ class UserTable extends React.Component {
                     </tr>
                     </thead>
                     <tbody>
-                        <User userID="+ Add User" username="" adminchecked={false} activechecked={true} />
+                        <User userID="+ Add User" username="Kory" adminchecked="false" activechecked="true" />
                     </tbody>
                 </table>
             </div>
