@@ -1,7 +1,6 @@
 package org.cbtf.f2f.client;
 
-import org.springframework.security.authentication.AnonymousAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.cbtf.f2f.util.LoggedInUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,19 +18,10 @@ public class ClientController {
      */
     @RequestMapping("/")
     public String getHomePage() {
-        if (isUserLoggedIn()) {
+        if (LoggedInUtil.isUserLoggedIn()) {
             return "main";
         } else {
             return "sign-in";
         }
-    }
-
-    private boolean isUserLoggedIn() {
-        return SecurityContextHolder.getContext().getAuthentication() != null &&
-                SecurityContextHolder.getContext().getAuthentication().isAuthenticated() &&
-                //when Anonymous Authentication is enabled
-                !(SecurityContextHolder.getContext().getAuthentication()
-                        instanceof AnonymousAuthenticationToken);
-
     }
 }
