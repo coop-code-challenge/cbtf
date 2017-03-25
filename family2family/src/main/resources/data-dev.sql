@@ -322,3 +322,9 @@ values (1, 7),
 insert into category_note(child_id, category_id, note)
 values (1, 1, 'Loss of balance and facial paralysis. Smile surgery where tongue nerve was used for smile.'),
 (1, 2, 'Surgery was only treatment. 2 resection surgeries.');
+
+
+/* new added dummy data into alert table */
+insert into alerts_update(date_time, message) values(1490459787000, 'A generic message');
+insert into alerts_update (date_time, message) values (1488040587000, 'Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.');
+insert into alerts_update (date_time, message) values (1456418187000, 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.');
