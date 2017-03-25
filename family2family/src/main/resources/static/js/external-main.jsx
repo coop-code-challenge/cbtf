@@ -39,9 +39,8 @@ class MatchContactComponent extends React.Component{
     render(){
 
         return (
-            <div className="componentBox">
-                <div className="MatchContact">
-                    <h3>My Match's Contact Information</h3>
+            <div className="contact-information-box">
+                    <div className="component-box-title">My Match's Contact Information</div>
                     <ul>
                         <ul >Daytime Phone Number : {this.props.dayPhoneNumber}</ul>
                         <ul >Other Phone Number : {this.props.otherPhoneNumber}</ul>
@@ -49,7 +48,6 @@ class MatchContactComponent extends React.Component{
                         <ul >Alternative Email : {this.props.altEmail}</ul>
                         <ul >Location : {this.props.location}</ul>
                     </ul>
-                </div>
             </div>
         )
     }
@@ -58,14 +56,12 @@ class MatchContactComponent extends React.Component{
 class Notes extends React.Component{
     render(){
         return(
-            <div className="componentBox">
-            <div className="NotesBox">
-                <h3>
+            <div className="note-box">
+                <div className="component-box-title">
                     My Notes:
-                </h3>
+                </div>
                 <textarea rows="6" cols="50" className="notes-textarea">
                 </textarea>
-            </div>
         </div>);
     }
 }
@@ -75,12 +71,10 @@ class AppContent extends React.Component {
         return (
             <div>
                 <AlreadySignedIn />
-                <table className="rowOne">
-                    <tr>
-                        <td><MatchContactComponent dayPhoneNumber="123456789" otherPhoneNumber="987654321" email="something@gmail.com" altEmail="somethingelse@gmail.com" location="here.exe" /></td>
-                        <td><Notes /></td>
-                    </tr>
-                </table>
+                <div className="row-one">
+                        <div className="component-box"><MatchContactComponent dayPhoneNumber="123456789" otherPhoneNumber="987654321" email="something@gmail.com" altEmail="somethingelse@gmail.com" location="here.exe" /></div>
+                        <div className="component-box"><Notes /></div>
+                </div>
             </div>
         );
     }

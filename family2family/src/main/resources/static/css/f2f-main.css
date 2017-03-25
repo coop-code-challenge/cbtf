@@ -1,28 +1,30 @@
 /* The css file for the main application */
-.MatchContact {
-    background-color: white;
-    border: 2px solid black;
-    text-align: center;
-    padding: 3px;
-    margin-left: 15%;
-}
-.NotesBox{
-    background-color: white;
-    border: 2px solid black;
-    margin-left: 15%;
-}
 
-.componentBox {
-    background-color: black;
-    height: 100%;
-    margin-right: 5%;
-}
-
-.rowOne {
+.row-one {
     width: 100%;
+    overflow: auto;
+}
+
+.component-box {
+    width: 45%;
+    border: 1px solid black;
+    border-left: 3em solid black !important;
+    float: left;
+    height: 15em;
+    margin: 2em;
+    padding: 2em;
+}
+
+.component-box-title{
+    font-size: 2em;
+    text-align: center;
+}
+
+.contact-information-box, .note-box {
+    background-color: white;
 }
 
 .notes-textarea {
     width: 100%;
-    height: 80%;
+    height: 100%;
 }
