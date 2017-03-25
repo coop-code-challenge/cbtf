@@ -26,15 +26,15 @@ public class FindMentor {
     @GetMapping("/{userId}")
     public Users findMatch(@PathVariable("userId") String userId) {
         Users user = userRepo.findOne(userId);
-        Contact userContact = user.getContact();
-
-        List<Child> children = userContact.getChildren();
-
-        for(int i= 0; i < children.size(); i++) {
-
-
-
-        }
+//        Contact userContact = user.getContact();
+//
+//        List<Child> children = userContact.getChildren();
+//
+//        for(int i= 0; i < children.size(); i++) {
+//
+//
+//
+//        }
 
 
 
@@ -43,7 +43,5 @@ public class FindMentor {
 
         return user;
     }
-
-
 
 }
