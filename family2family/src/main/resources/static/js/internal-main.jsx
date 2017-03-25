@@ -2,7 +2,7 @@
 class NavBarComponent extends React.Component {
     render() {
         return(
-            <nav className="navbar navbar-default">
+            <nav className="navbar">
                 <div className="container-fluid">
                     <ul className="nav navbar-nav">
                         <li className="active"><a href="#">Home</a></li>
