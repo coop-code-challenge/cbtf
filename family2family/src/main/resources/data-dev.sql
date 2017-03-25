@@ -322,3 +322,18 @@ values (1, 7),
 insert into category_note(child_id, category_id, note)
 values (1, 1, 'Loss of balance and facial paralysis. Smile surgery where tongue nerve was used for smile.'),
 (1, 2, 'Surgery was only treatment. 2 resection surgeries.');
+
+
+/* new added dummy data into alert table */
+insert into ALERT_TABLE (id, datetm, message) values (1, '2016-12-22 17:27:35', 'Pellentesque viverra pede ac diam.');
+insert into ALERT_TABLE (id, datetm, message) values (2, '2016-12-28 16:17:34', 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui.');
+insert into ALERT_TABLE (id, datetm, message) values (3, '2016-06-13 03:34:31', 'Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.');
+insert into ALERT_TABLE (id, datetm, message) values (4, '2017-01-12 23:00:52', 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.');
+insert into ALERT_TABLE (id, datetm, message) values (5, '2016-10-17 21:51:38', 'Proin eu mi. Nulla ac enim.');
+insert into ALERT_TABLE (id, datetm, message) values (6, '2016-05-29 15:30:17', 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.');
+insert into ALERT_TABLE (id, datetm, message) values (7, '2016-11-24 15:35:46', 'Curabitur in libero ut massa volutpat convallis.');
+insert into ALERT_TABLE (id, datetm, message) values (8, '2016-08-16 03:49:33', 'Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.');
+insert into ALERT_TABLE (id, datetm, message) values (9, '2016-06-27 13:26:38', 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.');
+insert into ALERT_TABLE (id, datetm, message) values (10, '2017-03-17 21:32:12', 'In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.');
+insert into ALERT_TABLE (id, datetm, message) values (11, '2016-06-24 07:12:52', 'Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.');
+insert into ALERT_TABLE (id, datetm, message) values (12, '2017-01-21 16:12:02', 'In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.');
