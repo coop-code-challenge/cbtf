@@ -1,4 +1,5 @@
 
+
 class NavBarComponent extends React.Component {
     render() {
         return(
@@ -45,6 +46,8 @@ class AppContent extends React.Component {
             <div>
                 <NavBarComponent />
                 <AlreadySignedIn />
+
+
             </div>
         );
     }
