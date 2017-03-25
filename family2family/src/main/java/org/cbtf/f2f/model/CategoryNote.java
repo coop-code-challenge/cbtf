@@ -75,6 +75,9 @@ public class CategoryNote {
 
         private Child child;
 
+        public PK() {
+        }
+
         public PK(Category category, Child child) {
             this.category = category;
             this.child = child;

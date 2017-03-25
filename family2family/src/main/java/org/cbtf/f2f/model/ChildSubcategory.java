@@ -59,6 +59,9 @@ public class ChildSubcategory {
 
         private Child child;
 
+        public PK() {
+        }
+
         public PK(Subcategory subcategory, Child child) {
             this.subcategory = subcategory;
             this.child = child;

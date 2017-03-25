@@ -1,6 +1,7 @@
 package org.cbtf.f2f.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
@@ -9,7 +10,7 @@ import java.util.Set;
  */
 
 @Entity
-public class Child {
+public class Child implements Serializable {
 
     /**
      * The column name for {@link #childId}.
