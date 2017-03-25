@@ -6,9 +6,9 @@ class NavBarComponent extends React.Component {
                 <div className="container-fluid">
                     <ul className="nav navbar-nav">
                         <li className="active"><a href="#">Home</a></li>
-                        <li><a href="#Page1">Page 1</a></li>
-                        <li><a href="#Page2">Page 2</a></li>
-                        <li><a href="#Page3">Page 3</a></li>
+                        <li><a href="#Page1">Contact Entry</a></li>
+                        <li><a href="#Page2">Find a Mentor</a></li>
+                        <li><a href="#Page3">Admin Settings</a></li>
                     </ul>
                 </div>
             </nav>
