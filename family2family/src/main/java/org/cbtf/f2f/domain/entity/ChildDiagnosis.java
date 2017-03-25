@@ -1,4 +1,4 @@
-package org.cbtf.f2f.model;
+package org.cbtf.f2f.domain.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -78,6 +78,14 @@ public class ChildDiagnosis {
         public PK(Diagnosis diagnosis, Child child) {
             this.diagnosis = diagnosis;
             this.child = child;
+        }
+
+        public Diagnosis getDiagnosis() {
+            return diagnosis;
+        }
+
+        public Child getChild() {
+            return child;
         }
     }
 

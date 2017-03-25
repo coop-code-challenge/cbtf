@@ -1,4 +1,4 @@
-package org.cbtf.f2f.model;
+package org.cbtf.f2f.domain.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -78,6 +78,14 @@ public class MentorMentee {
         public PK(Contact mentor, Contact mentee) {
             this.mentor = mentor;
             this.mentee = mentee;
+        }
+
+        public Contact getMentor() {
+            return mentor;
+        }
+
+        public Contact getMentee() {
+            return mentee;
         }
     }
 }

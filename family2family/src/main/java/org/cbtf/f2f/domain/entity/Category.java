@@ -1,4 +1,4 @@
-package org.cbtf.f2f.model;
+package org.cbtf.f2f.domain.entity;
 
 import javax.persistence.*;
 import java.util.List;

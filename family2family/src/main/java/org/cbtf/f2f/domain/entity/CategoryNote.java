@@ -1,8 +1,7 @@
-package org.cbtf.f2f.model;
+package org.cbtf.f2f.domain.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * A note related to a child for a category.
@@ -81,6 +80,14 @@ public class CategoryNote {
         public PK(Category category, Child child) {
             this.category = category;
             this.child = child;
+        }
+
+        public Category getCategory() {
+            return category;
+        }
+
+        public Child getChild() {
+            return child;
         }
     }
 

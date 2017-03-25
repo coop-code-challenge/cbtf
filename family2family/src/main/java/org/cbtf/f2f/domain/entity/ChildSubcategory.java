@@ -1,4 +1,4 @@
-package org.cbtf.f2f.model;
+package org.cbtf.f2f.domain.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -65,6 +65,14 @@ public class ChildSubcategory {
         public PK(Subcategory subcategory, Child child) {
             this.subcategory = subcategory;
             this.child = child;
+        }
+
+        public Subcategory getSubcategory() {
+            return subcategory;
+        }
+
+        public Child getChild() {
+            return child;
         }
     }
 }
