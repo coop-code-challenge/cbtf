@@ -33,6 +33,10 @@ class EditUserRow extends React.Component {
         this.state = {userid:"", fname:"", lname:"", admin:{true}, activeUser:{false}};
     }
 
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
     render() {
         return(
             <div class="editUserRow" className="editUserRow">
@@ -40,26 +44,26 @@ class EditUserRow extends React.Component {
                     <div className="form-group">
                         <label className="control-label col-sm-2" for="userid">User ID: </label>
                         <div className="col-sm-3">
-                            <input type="text" className="form-control" name="userid" value={this.props.userid}></input>
+                            <input type="text" className="form-control" name="userid" value={this.props.userid} onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div className="form-group">
                         <label className="control-label col-sm-2" for="fname">First Name:</label>
                         <div className="col-sm-3">
-                            <input type="text" className="form-control" name="fname" value={this.state.fname}></input>
+                            <input type="text" className="form-control" name="fname" value={this.state.fname} onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div className="form-group">
                         <label className="control-label col-sm-2" for="lname">Last Name: </label>
                         <div className="col-sm-3">
-                            <input type="text" className="form-control" name="lname" value={this.state.lname}></input>
+                            <input type="text" className="form-control" name="lname" value={this.state.lname} onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div className="form-group">
                         <label className="control-label col-md-2" for="admin">Administrator: </label>
                         <div className="col-sm-3">
                             <div className="checkbox">
-                                <input type="checkbox" name="admin" value={this.state.admin}></input>
+                                <input type="checkbox" name="admin" value={this.state.admin} onChange={this.handleChange}/>
                             </div>
                         </div>
                     </div>
@@ -67,7 +71,7 @@ class EditUserRow extends React.Component {
                         <label className="control-label col-md-2" for="admin">Active: </label>
                         <div className="col-sm-3">
                             <div className="checkbox">
-                                <input type="checkbox" name="admin" value={this.state.active}></input>
+                                <input type="checkbox" name="admin" value={this.state.active} onChange={this.handleChange}/>
                             </div>
                         </div>
                     </div>
