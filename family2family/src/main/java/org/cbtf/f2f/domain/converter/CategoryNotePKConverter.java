@@ -4,7 +4,6 @@ import org.cbtf.f2f.domain.entity.*;
 import org.cbtf.f2f.domain.repository.CategoryRepository;
 import org.cbtf.f2f.domain.repository.ChildRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.webmvc.spi.BackendIdConverter;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +11,7 @@ import java.io.Serializable;
 import java.util.regex.Pattern;
 
 /**
- * Created by tony on 3/24/17.
+ * Responsible for converting the CategoryNotePK to and from a string.
  */
 @Component
 public class CategoryNotePKConverter implements BackendIdConverter {

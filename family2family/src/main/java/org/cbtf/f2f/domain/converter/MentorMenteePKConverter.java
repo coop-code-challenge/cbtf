@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 import java.io.Serializable;
 import java.util.regex.Pattern;
 
+/**
+ * Responsible for converting the MentorMenteePK to and from a string.
+ */
 @Component
 public class MentorMenteePKConverter implements BackendIdConverter {
     private static final Pattern DELIMITER = Pattern.compile("\\|");

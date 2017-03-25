@@ -11,6 +11,9 @@ import org.springframework.stereotype.Component;
 import java.io.Serializable;
 import java.util.regex.Pattern;
 
+/**
+ * Responsible for converting the ChildDiagnosisPK to and from a string.
+ */
 @Component
 public class ChildDiagnosisPKConverter implements BackendIdConverter {
 

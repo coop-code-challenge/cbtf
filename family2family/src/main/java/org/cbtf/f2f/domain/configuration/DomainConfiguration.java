@@ -13,6 +13,9 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
 
+/**
+ * This is responsible for registering converters to turn entities into ids for the rest controllers.
+ */
 @Configuration
 public class DomainConfiguration extends RepositoryRestConfigurerAdapter {
 

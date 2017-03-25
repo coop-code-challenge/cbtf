@@ -12,6 +12,9 @@ import org.springframework.stereotype.Component;
 import java.io.Serializable;
 import java.util.regex.Pattern;
 
+/**
+ * Responsible for converting the ChildSubcategoryPK to and from a string.
+ */
 @Component
 public class ChildSubcategoryPKConverter implements BackendIdConverter {
 
