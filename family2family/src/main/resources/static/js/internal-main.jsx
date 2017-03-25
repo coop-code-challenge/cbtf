@@ -45,6 +45,7 @@ class AlertComponent extends React.Component{
     }
 }
 
+
 class AppContent extends React.Component {
     //TODO add routing or page state handling
     render() {

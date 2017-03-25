@@ -33,13 +33,40 @@ class AlertComponent extends React.Component{
     }
 }
 
+class MatchContactComponent extends React.Component{
+
+
+    render(){
+
+        return (
+            <div className="componentBox">
+                <div className="MatchContact">
+                    <h3>My Match's Contact Information</h3>
+                    <ul>
+                        <ul >Daytime Phone Number : {this.props.dayPhoneNumber}</ul>
+                        <ul >Other Phone Number : {this.props.otherPhoneNumber}</ul>
+                        <ul >Email : {this.props.email}</ul>
+                        <ul >Alternative Email : {this.props.altEmail}</ul>
+                        <ul >Location : {this.props.location}</ul>
+                    </ul>
+                </div>
+            </div>
+        )
+    }
+}
+
 class AppContent extends React.Component {
     //TODO add routing or page state handling
     render() {
         return (
             <div>
                 <AlreadySignedIn />
-                <AlertComponent />
+                <table className="rowOne">
+                    <tr>
+                        <td><MatchContactComponent dayPhoneNumber="123456789" otherPhoneNumber="987654321" email="something@gmail.com" altEmail="somethingelse@gmail.com" location="here.exe" /></td>
+                        <td><MatchContactComponent /></td>
+                    </tr>
+                </table>
             </div>
         );
     }

@@ -1,0 +1,19 @@
+/* The css file for the main application */
+.MatchContact {
+    background-color: white;
+    border: 2px black;
+    text-align: center;
+    padding: 3px;
+    border-style: double;
+    margin-left: 15%;
+}
+
+.componentBox {
+    background-color: black;
+    height: 100%;
+    margin-right: 5%;
+}
+
+.rowOne {
+    width: 100%;
+}
