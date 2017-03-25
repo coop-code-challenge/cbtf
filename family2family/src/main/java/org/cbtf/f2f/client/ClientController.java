@@ -1,6 +1,11 @@
 package org.cbtf.f2f.client;
 
+import org.cbtf.f2f.domain.converter.UserPKConverter;
+import org.cbtf.f2f.domain.entity.Users;
+import org.cbtf.f2f.domain.repository.UsersRepository;
+import org.cbtf.f2f.security.model.UserInfo;
 import org.cbtf.f2f.util.LoggedInUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ClientController {
 
+    @Autowired
+    private UsersRepository usersrepository;
     /**
      * Returns the name of the html file to be served up at the url path. The @RequestMapping will cause the same
      * file to be served no matter which HTTP method is used.
@@ -19,7 +26,14 @@ public class ClientController {
     @RequestMapping("/")
     public String getHomePage() {
         if (LoggedInUtil.isUserLoggedIn()) {
-            return "external-main";
+            UserInfo googleUser = LoggedInUtil.getLoggedInUser();
+            Users appUser = usersrepository.findOne(googleUser.getEmail());
+            if(appUser == null)
+                return "request-auth";
+            else if (appUser.getAdmin() == true)
+                return "internal-main";
+            else
+                return "external-main";
         } else {
             return "sign-in";
         }

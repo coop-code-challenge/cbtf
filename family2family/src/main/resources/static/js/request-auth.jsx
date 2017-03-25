@@ -32,7 +32,7 @@ class AlreadySignedIn extends React.Component {
     render() {
         return(
             <div>
-                <span>Congrats {this.state.person.givenName}, you are signed in.</span>
+                <span>{this.state.person.givenName}, contact an admin to set up your account.</span>
             </div>
         );
     }
