@@ -274,31 +274,12 @@ city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, sec
 values (1, 'John', 'Smith', TRUE, FALSE, FALSE,
 '8009999999', TRUE, NULL, FALSE,
 'St. Louis', 'MO', 'work@pls', TRUE, NULL, FALSE, 'I can be reached by email or SMS.', 'Great feedback from prior matches.');
-
---Contact #2
-insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
-primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
-city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
-values (2, 'Janis', 'Joplin', FALSE, TRUE, FALSE,
-'8675309', TRUE, NULL, FALSE,
-'St. Louis', 'MO', 'piece@heart', TRUE, NULL, FALSE, 'I can be reached by email or SMS.', 'Great feedback from prior matches.');
-
---Contact #3
-insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
-primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
-city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
-values (3, 'Tom', 'Bombadil', FALSE, TRUE, FALSE,
-'111222333', TRUE, NULL, FALSE,
-'St. Louis', 'MO', 'shire@forest', TRUE, NULL, FALSE, 'I can be reached by butterfly', 'Great feedback from prior matches.');
-
---Mentor_Mentee
-insert into mentor_mentee(mentor, mentee, time_matched) values (1,3, 1490405554);
-
+--Begin Child for Contact 1
 insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
 values (1, FALSE, 946706400000, NULL, 'Tyler', 'Smith', 1);
 
 insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
-values (1, 45, 2);
+values (1, 45, 3);
 
 insert into child_subcategory(child_id, subcategory_id)
 values (1, 7),
@@ -311,14 +292,483 @@ values (1, 7),
 (1, 89),
 (1, 109),
 (1, 126),
-(1, 140),
+(1, 139),
 (1, 142),
 (1, 143),
 (1, 145),
 (1, 173),
-(1, 174),
+(1, 178),
 (1, 193);
 
 insert into category_note(child_id, category_id, note)
-values (1, 1, 'Loss of balance and facial paralysis. Smile surgery where tongue nerve was used for smile.'),
+values (1, 1, 'Loss of balance.'),
 (1, 2, 'Surgery was only treatment. 2 resection surgeries.');
+--End Child for Contact 1
+
+--Contact #2
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (2, 'Janis', 'Joplin', FALSE, TRUE, FALSE,
+'8675309', TRUE, NULL, FALSE,
+'St. Louis', 'MO', 'piece@heart', TRUE, NULL, FALSE, 'I can be reached by email or SMS.', 'Great feedback from prior matches.');
+
+--Begin Child for Contact 2
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (2, FALSE, 949806400000, NULL, 'John', 'Jones', 2);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (2, 45, 2);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (2, 7),
+(2, 53),
+(2, 55),
+(2, 73),
+(2, 74),
+(2, 76),
+(2, 79),
+(2, 89),
+(2, 109),
+(2, 127),
+(2, 140),
+(2, 142),
+(2, 143),
+(2, 145),
+(2, 173),
+(2, 174),
+(2, 190);
+
+insert into category_note(child_id, category_id, note)
+values (2, 1, 'Loss of balance and facial paralysis. Smile surgery where tongue nerve was used for smile.'),
+(2, 2, 'Surgery was only treatment.');
+--End Child for Contact 2
+
+--Contact #3
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (3, 'Tom', 'Bombadil', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'St. Louis', 'MO', 'shire@forest', TRUE, NULL, FALSE, 'I can be reached by butterfly', 'Great feedback from prior matches.');
+
+--Begin Child for Contact 3
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (3, FALSE, 976706400000, NULL, 'Nick', 'Daniels', 3);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (3, 45, 11);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (3, 7),
+(3, 51),
+(3, 55),
+(3, 73),
+(3, 74),
+(3, 76),
+(3, 79),
+(3, 89),
+(3, 109),
+(3, 127),
+(3, 139),
+(3, 142),
+(3, 143),
+(3, 145),
+(3, 173),
+(3, 176),
+(3, 190);
+
+insert into category_note(child_id, category_id, note)
+values (3, 1, 'Facial paralysis. Smile surgery where tongue nerve was used for smile.'),
+(3, 2, 'still working on treatment plan');
+--End Child for Contact 3
+
+
+--Contact #4
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (4, 'Tom', 'Jerry', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'Troy', 'MO', 'test@forest', TRUE, NULL, FALSE, 'I can be reached by butterfly.', '');
+
+--Begin Child for Contact 4
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (4, FALSE, 946706400000, NULL, 'Nick', 'Daniels', 4);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (4, 16, 11);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (4, 8),
+(4, 12),
+(4, 55),
+(4, 70),
+(4, 74),
+(4, 76),
+(4, 86),
+(4, 89);
+
+
+insert into category_note(child_id, category_id, note)
+values (4, 1, 'Facial paralysis. Smile surgery where tongue nerve was used for smile.'),
+(4, 2, 'still working on treatment plan');
+--End Child for Contact 4
+
+
+--Contact #5
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (5, 'larry', 'sams', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'Kansas City', 'MO', 'royals@forest', TRUE, NULL, FALSE, 'I can be reached by text', '');
+
+--Begin Child for Contact 5
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (5, FALSE, 946706400000, NULL, 'Emma', 'Sams', 5);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (5, 16, 11);
+
+insert into child_subcategory(child_id, subcategory_id)
+values
+(5, 8),
+(5, 12),
+(5, 55),
+(5, 70),
+(5, 74),
+(5, 76),
+(5, 86),
+(5, 89);
+
+
+insert into category_note(child_id, category_id, note)
+values (5, 1, 'Facial paralysis. Smile surgery where tongue nerve was used for smile.'),
+(5, 2, 'still working on treatment plan');
+--End Child for Contact 5
+
+
+
+--Contact #6
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (6, 'Deb', 'Ice', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'Wentzville', 'MO', 'teach@nisc', TRUE, NULL, FALSE, 'I can be reached by facebook.', '');
+
+--Begin Child for Contact 6
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (6, FALSE, 946708400000, NULL, 'Tracy', 'Ice', 6);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (6, 16, 8);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (6, 2),
+(6, 10),
+(6, 55),
+(6, 73),
+(6, 74),
+(6, 76),
+(6, 86),
+(6, 92),
+(6, 93),
+(6, 94);
+
+insert into category_note(child_id, category_id, note)
+values (6, 1, 'Facial paralysis.');
+--End Child for Contact 6
+
+
+--Contact #7
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (7, 'Deb', 'Ice', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'Wentzville', 'MO', 'teach@nisc', TRUE, NULL, FALSE, 'I can be reached by facebook.', '');
+
+--Begin Child for Contact 7
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (7, FALSE, 946708400000, NULL, 'Tracy', 'Ice', 7);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (7, 16, 8);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (7, 5),
+(7, 8),
+(7, 9),
+(7, 14),
+(7, 17),
+(7, 21),
+(7, 25),
+(7, 27),
+(7, 31),
+(7, 32);
+
+insert into category_note(child_id, category_id, note)
+values (7, 6, 'SSM.'),
+(7, 2, 'therapy');
+--End Child for Contact 7
+
+
+--Contact #8
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (8, 'Ryan', 'Grape', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'Wentzville', 'MO', 'student@nisc', TRUE, NULL, FALSE, 'I can be reached by phone.', '');
+
+--Begin Child for Contact 8
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (8, FALSE, 946708400000, NULL, 'Gale', 'Grape', 8);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (8, 13, 7);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (8, 1),
+(8, 58),
+(8, 69),
+(8, 74),
+(8, 87),
+(8, 91),
+(8, 92);
+
+insert into category_note(child_id, category_id, note)
+values (8, 6, 'Childrens hospital.'),
+(8, 2, 'therapy');
+--End Child for Contact 8
+
+
+--Contact #9
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (9, 'Mike', 'Wazowski', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'St. Peters', 'MO', 'monstersinc@nisc', TRUE, NULL, FALSE, 'I can be reached by batphone.', '');
+
+--Begin Child for Contact 9
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (9, FALSE, 946703400000, NULL, 'Joe', 'Wazowski', 9);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (9, 13, 7);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (9, 1);
+
+
+insert into category_note(child_id, category_id, note)
+values (9, 6, 'Childrens hospital.'),
+(9, 2, 'therapy');
+--End Child for Contact 9
+
+
+--Contact #10
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (10, 'Marie', 'Allsbrook', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'Denver', 'CO', 'skiresort@nisc', TRUE, NULL, FALSE, 'I can be reached by cell phone.', '');
+
+--Begin Child for Contact 10
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (10, FALSE, 946702900000, NULL, 'Olivia', 'Allsbrook', 10);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (10, 14, 9);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (10, 1),
+(10, 7),
+(10, 13),
+(10, 55),
+(10, 77),
+(10, 88),
+(10, 91);
+
+
+insert into category_note(child_id, category_id, note)
+values (10, 4, 'Depression and aggression'),
+(10, 2, 'therapy');
+--End Child for Contact 10
+
+
+--Contact #11
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (11, 'Steven', 'Rogers', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'New York City', 'NY', 'captian@google', TRUE, NULL, FALSE, 'Dont call me, I will call you.', '');
+
+--Begin Child for Contact 11
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (11, FALSE, 946202900000, NULL, 'Thor', 'Rogers', 11);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (11, 14, 3);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (11, 3),
+(11, 7),
+(11, 13),
+(11, 55),
+(11, 76),
+(11, 88),
+(11, 91);
+
+
+insert into category_note(child_id, category_id, note)
+values (11, 4, 'Aggression'),
+(11, 2, 'therapy');
+--End Child for Contact 11
+
+
+--Contact #12
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (12, 'Natasha', 'Romanoff', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'New York City', 'NY', 'blackwidow@google', TRUE, NULL, FALSE, 'Just text me.', '');
+
+--Begin Child for Contact 12
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (12, FALSE, 946902900000, NULL, 'Steven', 'Romanoff', 12);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (12, 14, 3);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (12, 13),
+(12, 17),
+(12, 43),
+(12, 55),
+(12, 76),
+(12, 88),
+(12, 91);
+
+
+insert into category_note(child_id, category_id, note)
+values (12, 5, 'has to avoid certain foods'),
+(12, 2, 'surgery and change in diet');
+--End Child for Contact 12
+
+
+--Contact #13
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (13, 'Natasha', 'Romanoff', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'New York City', 'NY', 'blackwidow@google', TRUE, NULL, FALSE, 'Just text me.', '');
+
+--Begin Child for Contact 13
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (13, FALSE, 946902900000, NULL, 'Steven', 'Romanoff', 13);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (13, 14, 3);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (13, 13),
+(13, 17),
+(13, 43),
+(13, 55),
+(13, 76),
+(13, 88),
+(13, 91);
+
+
+insert into category_note(child_id, category_id, note)
+values (13, 2, 'surgery and change in diet');
+--End Child for Contact 12
+
+--Contact #14
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (14, 'Natasha', 'Romanoff', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'New York City', 'NY', 'blackwidow@google', TRUE, NULL, FALSE, 'Just text me.', '');
+
+--Begin Child for Contact 14
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (14, FALSE, 941902900000, NULL, 'Steven', 'Romanoff', 14);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (14, 1, 13);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (14, 13),
+(14, 17),
+(14, 43),
+(14, 55),
+(14, 79),
+(14, 88),
+(14, 91),
+(14, 92);
+
+
+insert into category_note(child_id, category_id, note)
+values (14, 5, 'has to avoid certain foods'),
+(14, 2, 'change in diet');
+--End Child for Contact 14
+
+--Contact #15
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (15, 'Roger', 'Stooge', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'Troy', 'IL', 'nisc@forest', TRUE, NULL, FALSE, 'Great feedback from prior matches.', '');
+
+--Begin Child for Contact 15
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (15, FALSE, 976706400000, NULL, 'Leon', 'Stooge', 15);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (15, 45, 11);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (15, 4),
+(15, 31),
+(15, 45),
+(15, 43),
+(15, 64),
+(15, 76),
+(15, 87),
+(15, 88),
+(15, 89),
+(15, 127),
+(15, 139),
+(15, 142),
+(15, 143),
+(15, 145),
+(15, 173),
+(15, 176),
+(15, 190);
+
+insert into category_note(child_id, category_id, note)
+values (15, 1, 'Facial paralysis. Smile surgery where tongue nerve was used for smile.'),
+(15, 2, 'still working on treatment plan');
+--End Child for Contact 15
+
+
+
+--Mentor_Mentee
+insert into mentor_mentee(mentor, mentee, time_matched) values (1,3, 1490405554);
+
+
+/* new added dummy data into alert table */
+insert into alerts_update(date_time, message) values(1490459787000, 'A generic message');
+insert into alerts_update (date_time, message) values (1488040587000, 'Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.');
+insert into alerts_update (date_time, message) values (1456418187000, 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.');
