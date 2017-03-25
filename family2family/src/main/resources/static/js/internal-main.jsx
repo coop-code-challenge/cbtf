@@ -6,9 +6,9 @@ class NavBarComponent extends React.Component {
                 <div className="container-fluid">
                     <ul className="nav navbar-nav">
                         <li className="active"><a href="#">Home</a></li>
-                        <li><a href="#Contact Entry">Contact Entry</a></li>
-                        <li><a href="#Find a Mentor">Find a Mentor</a></li>
-                        <li><a href="#Admin Settings">Admin Settings</a></li>
+                        <li><a href="#Page1">Contact Entry</a></li>
+                        <li><a href="#Page2">Find a Mentor</a></li>
+                        <li><a href="#Page3">Admin Settings</a></li>
                     </ul>
                 </div>
             </nav>
@@ -32,9 +32,20 @@ class AlreadySignedIn extends React.Component {
     render() {
         return(
             <div>
-                <span>Congrats {this.state.person.givenName}, you are an admin.</span>
+                <span>Congrats {this.state.person.givenName}, you are signed in.</span>
             </div>
         );
+    }
+}
+
+class AlertComponent extends React.component{
+    render(){
+        return (
+            <div>
+                <h3>this will be the date</h3>
+                <p>this will be the message of the alert.</p>
+            </div>
+        )
     }
 }
 
@@ -45,6 +56,7 @@ class AppContent extends React.Component {
             <div>
                 <NavBarComponent />
                 <AlreadySignedIn />
+                <AlertComponent />
             </div>
         );
     }

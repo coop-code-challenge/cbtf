@@ -20,12 +20,26 @@ class AlreadySignedIn extends React.Component {
     }
 }
 
+class AlertComponent extends React.Component{
+    render() {
+        return (
+            <div>
+                <h3>The will be the date of the alert</h3>
+                <p>
+                    this will be the message of the alert.
+                </p>
+            </div>
+        )
+    }
+}
+
 class AppContent extends React.Component {
     //TODO add routing or page state handling
     render() {
         return (
             <div>
                 <AlreadySignedIn />
+                <AlertComponent />
             </div>
         );
     }
