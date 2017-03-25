@@ -37,6 +37,15 @@ class EditUserRow extends React.Component {
         this.setState({value: event.target.value});
     }
 
+    sendFormData: function () {
+    // Fetch form values.
+    var formData = {
+        userid: React.findDOMNode(this.props.userid).value,
+        fname: React.findDOMNode(this.props.fname).value,
+        lname: React.findDOMNode(this.props.lname).value
+
+    };
+
     render() {
         return(
             <div class="editUserRow" className="editUserRow">
@@ -71,7 +80,7 @@ class EditUserRow extends React.Component {
                         <label className="control-label col-md-2" for="admin">Active: </label>
                         <div className="col-sm-3">
                             <div className="checkbox">
-                                <input type="checkbox" name="admin" value={this.state.active} onChange={this.handleChange}/>
+                                <input type="checkbox" name="active" value={this.state.active} onChange={this.handleChange}/>
                             </div>
                         </div>
                     </div>
