@@ -1,5 +1,4 @@
 
-
 class NavBarComponent extends React.Component {
     render() {
         return(
@@ -7,9 +6,9 @@ class NavBarComponent extends React.Component {
                 <div className="container-fluid">
                     <ul className="nav navbar-nav">
                         <li className="active"><a href="#">Home</a></li>
-                        <li><a href="#Page1">Page 1</a></li>
-                        <li><a href="#Page2">Page 2</a></li>
-                        <li><a href="#Page3">Page 3</a></li>
+                        <li><a href="#Page1">Contact Entry</a></li>
+                        <li><a href="#Page2">Find a Mentor</a></li>
+                        <li><a href="#Page3">Admin Settings</a></li>
                     </ul>
                 </div>
             </nav>
@@ -39,19 +38,6 @@ class AlreadySignedIn extends React.Component {
     }
 }
 
-class AlertComponent extends React.Component{
-    render() {
-        return (
-            <div>
-                <h3>The will be the date of the alert</h3>
-                <p>
-                    this will be the message of the alert.
-                </p>
-            </div>
-        )
-    }
-}
-
 class AppContent extends React.Component {
     //TODO add routing or page state handling
     render() {
@@ -59,7 +45,6 @@ class AppContent extends React.Component {
             <div>
                 <NavBarComponent />
                 <AlreadySignedIn />
-                <AlertComponent />
             </div>
         );
     }
