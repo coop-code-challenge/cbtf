@@ -55,6 +55,20 @@ class MatchContactComponent extends React.Component{
     }
 }
 
+class Notes extends React.Component{
+    render(){
+        return(
+            <div className="componentBox">
+            <div>
+                <p>
+                    My Notes:
+                </p>
+                <textarea rows="6" cols="50">
+                </textarea>
+            </div>
+        </div>);
+    }
+}
 class AppContent extends React.Component {
     //TODO add routing or page state handling
     render() {
@@ -64,7 +78,7 @@ class AppContent extends React.Component {
                 <table className="rowOne">
                     <tr>
                         <td><MatchContactComponent dayPhoneNumber="123456789" otherPhoneNumber="987654321" email="something@gmail.com" altEmail="somethingelse@gmail.com" location="here.exe" /></td>
-                        <td><MatchContactComponent /></td>
+                        <td><Notes /></td>
                     </tr>
                 </table>
             </div>
