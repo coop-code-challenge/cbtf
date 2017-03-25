@@ -25,7 +25,6 @@ class AppContent extends React.Component {
     render() {
         return (
             <div>
-                <NavBarComponent />
                 <AlreadySignedIn />
             </div>
         );
