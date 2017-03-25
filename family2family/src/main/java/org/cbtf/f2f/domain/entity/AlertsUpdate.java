@@ -17,13 +17,13 @@ public class AlertsUpdate {
 
     private String message;
 
-    private Date dateTime;
+    private Long dateTime;
 
     public AlertsUpdate() {
         this.message = "A generic constructor was called";
     }
 
-    public AlertsUpdate(String message, Date dateTime) {
+    public AlertsUpdate(String message, Long dateTime) {
         this.message = message;
         this.dateTime = dateTime;
     }
@@ -49,11 +49,11 @@ public class AlertsUpdate {
         this.message = message;
     }
 
-    public Date getDateTime() {
+    public Long getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(Date dateTime) {
+    public void setDateTime(Long dateTime) {
         this.dateTime = dateTime;
     }
 }
