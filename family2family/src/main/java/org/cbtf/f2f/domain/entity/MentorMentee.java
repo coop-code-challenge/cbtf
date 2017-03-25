@@ -79,5 +79,10 @@ public class MentorMentee {
             this.mentor = mentor;
             this.mentee = mentee;
         }
+
+        @Override
+        public String toString(){
+            return mentor.getContactId() + "|" + mentee.getContactId();
+        }
     }
 }

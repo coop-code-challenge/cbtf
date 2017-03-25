@@ -275,6 +275,25 @@ values (1, 'John', 'Smith', TRUE, FALSE, FALSE,
 '8009999999', TRUE, NULL, FALSE,
 'St. Louis', 'MO', 'work@pls', TRUE, NULL, FALSE, 'I can be reached by email or SMS.', 'Great feedback from prior matches.');
 
+--Contact #2
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (2, 'Janis', 'Joplin', FALSE, TRUE, FALSE,
+'8675309', TRUE, NULL, FALSE,
+'St. Louis', 'MO', 'piece@heart', TRUE, NULL, FALSE, 'I can be reached by email or SMS.', 'Great feedback from prior matches.');
+
+--Contact #3
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (3, 'Tom', 'Bombadil', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'St. Louis', 'MO', 'shire@forest', TRUE, NULL, FALSE, 'I can be reached by butterfly', 'Great feedback from prior matches.');
+
+--Mentor_Mentee
+insert into mentor_mentee(mentor, mentee, time_matched) values (1,3, 1490405554);
+
 insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
 values (1, FALSE, 946706400000, NULL, 'Tyler', 'Smith', 1);
 
