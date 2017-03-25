@@ -8,3 +8,16 @@
 .editUserRow {
     margin: 30px 0 0 0;
 }
+
+.tableheader
+{
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+}
+
+.container.table
+{
+    border: 1px solid black;
+}

@@ -7,7 +7,7 @@ class User extends React.Component {
 
     render() {
         return(
-            <div className="row" data-toggle="collapse">
+            <div className="row">
                 <div className="col-sm-3">{this.props.userid}</div>
                 <div className="col-sm-3">{this.props.username}</div>
                 <div className="col-sm-3">
@@ -16,6 +16,7 @@ class User extends React.Component {
                 <div className="col-sm-3">
                     <input type="checkbox" name="active" checked={this.props.activechecked} disabled={true}/>
                 </div>
+                <EditUserRow id="editdata" className="collapse"/>
             </div>
         )
     }
@@ -24,6 +25,7 @@ class UserTable extends React.Component {
     render() {
         return(
             <div class="container">
+                <div className="tableheader">Users</div>
                 <div className="row">
                     <div className="col-sm-3 bold">User ID</div>
                     <div className="col-sm-3 bold">Name</div>
