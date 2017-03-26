@@ -14,35 +14,52 @@ class User extends React.Component {
         return(
             <div>
                 <a className="row" data-toggle="collapse" onClick={this.onClick.bind(this)}>
-                    <div className="col-sm-3">{this.props.userid}</div>
-                    <div className="col-sm-3">{this.props.username}</div>
-                    <div className="col-sm-3">
-                        <input type="checkbox" name="admin" checked={this.props.adminchecked} disabled={true}/>
-                    </div>
-                    <div className="col-sm-3">
-                        <input type="checkbox" name="active" checked={this.props.activechecked} disabled={true}/>
-                    </div>
+                <div className="col-sm-3">{this.props.user.userId}</div>
+                <div className="col-sm-3">{this.props.user.firstName + " " + this.props.user.lastName}</div>
+                <div className="col-sm-3">
+                    <input type="checkbox" name="admin" checked={this.props.user.admin} disabled={true}/>
+                </div>
+                <div className="col-sm-3">
+                    <input type="checkbox" name="active" checked={this.props.user.active} disabled={true}/>
+                </div>
                 </a>
                 {this.state.showReply && <EditUserRow />}
             </div>
         )
     }
 }
-
 class UserTable extends React.Component {
+constructor(props) {
+        super(props);
+        this.state = {users: []};
+    }
+
+    componentDidMount() {
+        $.getJSON('/internal-api/Users').then((data) => {
+            this.setState({users: data._embedded.Users});
+        })
+    }
     render() {
-        return(
-            <div class="container">
-                <div className="tableheader">Users</div>
+        let users = this.state.users.map(user =>
+            <User key={user.userId} user={user}/>
+        );
+        return (
+            <div>
                 <div className="row">
-                    <div className="col-sm-3 bold">User ID</div>
-                    <div className="col-sm-3 bold">Name</div>
-                    <div className="col-sm-3 bold">Administrator</div>
-                    <div className="col-sm-3 bold">Active?</div>
+                    <div className="col-xs-3">
+                        User Id
+                    </div>
+                    <div className="col-xs-3">
+                        User Name
+                    </div>
+                    <div className="col-xs-3">
+                        Administrator
+                    </div>
+                    <div className="col-xs-3">
+                        Active
+                    </div>
                 </div>
-                <User userid="WADE123" username="Wade Iwata" adminchecked={false} activechecked={true} />
-                <User userid="WADE123" username="Wade Iwata" adminchecked={false} activechecked={true} />
-                <User userid="WADE123" username="Wade Iwata" adminchecked={false} activechecked={true} />
+                {users}
             </div>
         )
     }
@@ -137,28 +154,28 @@ class EditUserRow extends React.Component {
 
     render() {
         return(
-            <div class="editUserRow" className="editUserRow">
-                <form className="form-horizontal" >
+            <div className="editUserRow">
+                <form className="form-horizontal">
                     <div className="form-group">
-                        <label className="control-label col-sm-2" for="userid">User ID: </label>
+                        <label className="control-label col-sm-2" htmlFor="userid">User ID: </label>
                         <div className="col-sm-3">
                             <input type="text" className="form-control" name="userid" value={this.props.userid} onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div className="form-group">
-                        <label className="control-label col-sm-2" for="fname">First Name:</label>
+                        <label className="control-label col-sm-2" htmlFor="fname">First Name:</label>
                         <div className="col-sm-3">
                             <input type="text" className="form-control" name="fname" value={this.state.fname} onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div className="form-group">
-                        <label className="control-label col-sm-2" for="lname">Last Name: </label>
+                        <label className="control-label col-sm-2" htmlFor="lname">Last Name: </label>
                         <div className="col-sm-3">
                             <input type="text" className="form-control" name="lname" value={this.state.lname} onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div className="form-group">
-                        <label className="control-label col-md-2" for="admin">Administrator: </label>
+                        <label className="control-label col-md-2" htmlFor="admin">Administrator: </label>
                         <div className="col-sm-3">
                             <div className="checkbox">
                                 <input type="checkbox" name="admin" value={this.state.admin} onChange={this.handleChange}/>
@@ -166,7 +183,7 @@ class EditUserRow extends React.Component {
                         </div>
                     </div>
                     <div className="form-group">
-                        <label className="control-label col-md-2" for="active">Active: </label>
+                        <label className="control-label col-md-2" htmlFor="active">Active: </label>
                         <div className="col-sm-3">
                             <div className="checkbox">
                                 <input type="checkbox" name="active" value={this.state.active} onChange={this.handleChange}/>
