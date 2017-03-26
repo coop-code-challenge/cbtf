@@ -264,8 +264,8 @@ INSERT INTO DIAGNOSIS(DIAGNOSIS_ID, DESCRIPTION) VALUES
 
 
 --Dummy Data
-insert into users(id, admin, active) values('work@pls', false, false);
-insert into users(id, admin, active) values('work@gmail.com', true, true);
+insert into users(id, admin, active, first_name, last_name) values('work@pls', false, false, 'John', 'Smith');
+insert into users(id, admin, active, first_name, last_name) values('work@gmail.com', true, true, 'Bob', 'Smith');
 insert into users(id, admin, active, first_name, last_name) values('jimmy@awesome.com', false, true, 'Jimmy', 'Neutron');
 insert into users(id, admin, active, first_name, last_name) values('dex@lab', true, false, 'Dextor', 'Lab');
 
