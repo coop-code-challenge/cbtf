@@ -3,13 +3,14 @@ package org.cbtf.f2f.domain.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
  * Created by lbrockman on 3/25/17.
  */
 @Entity
-public class AlertsUpdate {
+public class AlertsUpdate implements Serializable {
 
     @Id
     @GeneratedValue
