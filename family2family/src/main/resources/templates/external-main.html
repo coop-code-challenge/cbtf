@@ -7,8 +7,8 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css"
           th:href="@{webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
     <link rel="stylesheet"
-          href="../static/css/f2f-main.css"
-          th:href="@{/css/f2f-main.css}"/>
+          href="../static/css/f2f-external-main.css"
+          th:href="@{/css/f2f-external-main.css}"/>
 </head>
 
 <body>
@@ -25,10 +25,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js" th:src="@{webjars/toastr/2.1.3/toastr.min.js}"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" th:href="@{webjars/toastr/2.1.3/toastr.min.css}"/>
-
+<link rel="stylesheet" href="../static/css/f2f-main.css" th:href="@{/css/f2f-main.css}" />
 <script type="text/babel" src="../static/js/header.jsx" th:src="@{/js/header.jsx}"></script>
-<script type="text/babel" src="../static/js/main.jsx" th:src="@{/js/main.jsx}"></script>
+<script type="text/babel" src="../static/js/internal-main.jsx" th:src="@{/js/external-main.jsx}"></script>
 
+<!-- this script is to change the page-title class on External main page -->
+<script>
+    $(document).ready(function(){
+        $("#site-title #page-title a").text("Mentor/Mentee Information Form");
+    });
+</script>
 </body>
 
 </html>

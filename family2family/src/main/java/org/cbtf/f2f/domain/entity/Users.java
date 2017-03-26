@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import java.io.Serializable;
 
 /**
  * @author Matt Lievens.
@@ -81,4 +82,5 @@ public class Users {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
 }
