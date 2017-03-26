@@ -10,16 +10,29 @@
     font-family:'sans-serif';
     padding-left: 1em;
 }
-
+body{
+    background-color: #23527c;
+}
+#navBar{
+    background-color: #ffffff;
+    margin-top: 0px;
+    width: 100%;
+}
+#mainHeader{
+    background-color: white;
+    margin-bottom: 0px;
+    width: 100%;
+}
 .navbar-brand {
     font-size: 2em !important;
 }
 
 .navbar-nav li a {
     border-radius: 5px !important;
-    background-color: #337ab7 !important;
+    background-color: #23527c !important;
     color: #ffffff !important;
     margin: 5px;
+
 }
 
 .navbar-nav li a:hover {
@@ -27,11 +40,22 @@
     background-color: #23527c !important;
 }
 
+.alertContent{
+    border-radius: 5px !important;
+    background-color: #ffffff !important;
+    color: #23527c !important;
+    margin: 5px;
+    width: 60%;
+    margin-left: 20%;
+    padding: 5px;
+}
+
 #footer {
-    background-color: #337ab7;
-    color: white;
+    background-color: #cccccc;
+    color: #23527c;
     padding: 1em;
     margin: 1em;
+    width: 100%;
 }
 
 #footer ul li {
@@ -41,6 +65,10 @@
 }
 
 #footer ul li a {
-    color: white;
+    color: #23527c;
     text-decoration: underline;
+}
+
+.container{
+    width: 100%;
 }
