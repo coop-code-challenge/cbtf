@@ -14,7 +14,6 @@ class AlreadySignedIn extends React.Component {
     render() {
         return(
             <div>
-                <span>Congrats {this.state.person.givenName}, you are a Mentor/Mentee.</span>
             </div>
         );
     }
