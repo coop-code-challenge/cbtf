@@ -3,7 +3,7 @@ class Notes extends React.Component {
         return (
             <div>
                 <NotesHeader/>
-                <NotesTable/>
+                <NotesTable notesInfo={this.props.notesInfo}/>
             </div>
         );
     }
@@ -29,16 +29,16 @@ class NotesTable extends React.Component {
         return (
             <div>
                 <table>
-                    <body>
+                    <tbody>
                     <tr>
-                        <td>Administrator Notes </td>
-                        <td>Mentor/Mentee's Notes</td>
+                        <td> Administrator Notes  </td>
+                        <td> Mentor/Mentee's Notes </td>
                     </tr>
                     <tr>
                         <td>{this.props.notesInfo.adminNote}</td>
                         <td>{this.props.notesInfo.contactNote}</td>
                     </tr>
-                    </body>
+                    </tbody>
                 </table>
             </div>
         );
@@ -46,8 +46,8 @@ class NotesTable extends React.Component {
 }
 
 var notesInfo = {
-    adminNote: "",
-    contactNote: ""
+    adminNote:" Great mentee feedback ",
+    contactNote:" Need to change address "
 };
 
-ReactDOM.render(<Notes />, document.getElementById('root'));
+ReactDOM.render(<Notes notesInfo={notesInfo} />, document.getElementById('root'));
