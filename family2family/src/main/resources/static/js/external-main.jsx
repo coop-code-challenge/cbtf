@@ -1,23 +1,3 @@
-class AlreadySignedIn extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {person: []};
-    }
-
-    componentWillMount() {
-        $.getJSON('/api/user').then((data) => {
-            this.setState({person: data});
-        });
-    }
-
-    render() {
-        return(
-            <div>
-            </div>
-        );
-    }
-}
 
 class AlertComponent extends React.Component{
     render() {
@@ -70,7 +50,6 @@ class AppContent extends React.Component {
     render() {
         return (
             <div>
-                <AlreadySignedIn />
                 <div className="row-one row">
                     <div className="col-sm-12 col-md-6 col-lg-6">
                         <div className="component-box" >
