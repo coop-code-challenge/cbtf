@@ -18,6 +18,15 @@
     margin-right: 5%;
 }
 
+.rightInformation {
+    background-color: white;
+    height: 100%;
+}
+
+.leftInformation {
+    background-color: white;
+    height: 100%;
+}
 .rowOne {
     width: 100%;
 }
