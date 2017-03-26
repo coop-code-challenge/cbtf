@@ -69,32 +69,54 @@ class Notes extends React.Component{
 class Phone_Information extends React.Component{
     render(){
         return(
-            <div className="componentBox">
-            <div className="leftInformation">
-                <h3>
+            <div className="information-box">
+                <div className="component-box-title">
                     My Contact Information:
-                </h3>
-                <form>
-                    Daytime Phone Number:
-                    <input type ="text">
-                    </input>
-                    <input type ="checkbox">
-                    </input>
-                </form>
-                <form>
-                    Other Phone Number:
-                    <input type ="text">
-                    </input>
-                    <input type ="checkbox">
-                    </input>
-                </form>
-                <form>
-                    <input type ="text" placeholder="City">
-                    </input>
-                    <input type ="text" placeholder="State">
-                    </input>
-                </form>
-            </div>
+                </div>
+                <table>
+                    <tr>
+                        <td>
+                            Daytime Phone Number:
+                        </td>
+                        <td>
+                            <input type ="text">
+                            </input>
+                        </td>
+                        <td>
+                            <input type ="checkbox">
+                            </input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Other Phone Number:
+                        </td>
+                        <td>
+                            <input type ="text">
+                            </input>
+                        </td>
+                        <td>
+                            <input type ="checkbox">
+                            </input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <input type ="text" placeholder="City">
+                            </input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <input type ="text" placeholder="State">
+                            </input>
+                        </td>
+                    </tr>
+                </table>
             </div>
         )
     }
@@ -102,28 +124,41 @@ class Phone_Information extends React.Component{
 class Contact_Information extends React.Component{
     render(){
         return(
-            <div className="componentBox">
-            <div className="rightInformation">
-                <h3>
+            <div className="information-box">
+                <div className="component-box-title">
                     Emails:
-                </h3>
-                <form>
-                    Primary Email:
-                    <input type ="text">
-                    </input>
-                    <input type ="checkbox">
-                    </input>
+                </div>
+                <table>
+                    <tr>
+                        <td>
+                            Primary Email:
+                            </td>
+                        <td>
+                            <input type ="text">
+                            </input>
+                        </td>
+                        <td>
+                            <input type ="checkbox">
+                            </input>
                     Visible to match
-                </form>
-                <form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                     Secondary Email:
+                        </td>
+                        <td>
                     <input type ="text">
                     </input>
+                        </td>
+                        <td>
                     <input type ="checkbox">
                     </input>
-                    Visible to match
-                </form>
-            </div>
+                            Visible to match
+                        </td>
+                    </tr>
+
+                </table>
             </div>
         )
 
@@ -135,7 +170,7 @@ class AppContent extends React.Component {
         return (
             <div>
                 <AlreadySignedIn />
-                <div className="row-one row">
+                <div className="row">
                     <div className="col-sm-12 col-md-6 col-lg-6">
                         <div className="component-box" >
                             <MatchContactComponent dayPhoneNumber="123456789" otherPhoneNumber="987654321" email="something@gmail.com" altEmail="somethingelse@gmail.com" location="here.exe" />
@@ -148,12 +183,18 @@ class AppContent extends React.Component {
                         </div>
                     </div>
                 </div>
-                <table className="rowOne">
-                    <tr>
-                        <td><Phone_Information /></td>
-                        <td><Contact_Information /></td>
-                   </tr>
-                </table>
+                <div className="row">
+                    <div className="col-sm-12 col-md-6 col-lg-6">
+                        <div className="component-box" >
+                            <Phone_Information />
+                        </div>
+                    </div>
+                    <div className="col-sm-12 col-md-6 col-lg-6">
+                        <div className="component-box" >
+                            <Contact_Information />
+                        </div>
+                   </div>
+                </div>
             </div>
         );
     }
