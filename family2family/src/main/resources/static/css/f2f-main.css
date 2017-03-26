@@ -1,1 +1,15 @@
-/* The css file for the main application */
+.button-group button {
+    margin: 4px;
+}
+.button-group .delete{
+    margin: 4px 90px 4px 70px;
+}
+
+.editUserRow {
+    margin: 30px 0 0 0;
+    clear: both;
+}
+.editCategoryForm {
+    margin: 30px 0 0 0;
+    clear: both;
+}

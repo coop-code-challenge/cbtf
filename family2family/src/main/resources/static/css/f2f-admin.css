@@ -17,7 +17,25 @@
     width: 100%;
 }
 
-.container.table
+.container .table
 {
     border: 1px solid black;
+}
+
+.usersFrame{
+    display: block;
+}
+
+.refTablesFrame{
+    display: none;
+}
+
+.edit-collapse {
+    display: none;
+    clear: both;
+    width: 100%;
+}
+
+.row {
+    clear:left;
 }
