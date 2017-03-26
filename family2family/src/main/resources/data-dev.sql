@@ -272,7 +272,7 @@ insert into users(id, admin, active, first_name, last_name) values('kylemiller45
 insert into users(id, admin, active, first_name, last_name) values('thanlone1995@gmail.com',false, true, '', '');
 insert into users(id, admin, active, first_name, last_name) values('theismanj@gmail.com', true, true, '', '');
 insert into users(id, admin, active, first_name, last_name) values('toscott1@gmail.com', true, true, 'Tony', 'Scott');
-
+insert into users(id, admin, active, first_Name, last_Name) values('piece@heart', true, true, 'mike', 'schreiber');
 
 --Contact #1
 insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
