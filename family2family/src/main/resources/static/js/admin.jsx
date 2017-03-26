@@ -2,7 +2,7 @@ class User extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {userid: "", username: "", adminchecked: {false}, activechecked: {false}, showReply: {false}};
+        this.state = {userid: "", username: "", adminchecked: {false}, activechecked: {false}, showReply: {true}};
     }
 
     onClick(e){
@@ -87,10 +87,9 @@ class TabContentFrames extends React.Component {
         return (
             <div className="container">
                 <div className="usersFrame">
-                    <h1>This is the users tab</h1>
                     <UserTable />
                 </div>
-                <div className="">
+                <div className="refTablesFrame">
                     <h1>This is the ref table tab</h1>
                 </div>
             </div>
@@ -103,7 +102,7 @@ class TabBarComponent extends React.Component {
     displayUsers(e){
         e.preventDefault();
         console.log("Users Frame");
-        document.getElementsByClassName("")[0].style.display = 'none';
+        document.getElementsByClassName("refTablesFrame")[0].style.display = 'none';
         document.getElementsByClassName("usersFrame")[0].style.display = 'block';
     }
 
@@ -111,7 +110,7 @@ class TabBarComponent extends React.Component {
         e.preventDefault();
         console.log("RefTable");
         document.getElementsByClassName("usersFrame")[0].style.display = 'none';
-        document.getElementsByClassName("")[0].style.display = 'block';
+        document.getElementsByClassName("refTablesFrame")[0].style.display = 'block';
     }
 
     render() {
