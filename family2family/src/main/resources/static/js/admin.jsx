@@ -11,21 +11,36 @@ class User extends React.Component {
         this.setState({showReply: !this.state.showReply})
     }
 
+    displayEdit(e){
+        e.preventDefault();
+        console.log("Edit Collapse");
+        if(document.getElementsByClassName("edit-collapse")[0].style.display == 'block')
+        {
+            document.getElementsByClassName("edit-collapse")[0].style.display = 'none';
+        }
+        else
+        {
+            document.getElementsByClassName("edit-collapse")[0].style.display = 'block';
+        };
+    }
+
     render() {
         return(
             <div>
-                <a className="row" data-toggle="collapse" onClick={this.onClick.bind(this)}>
-                <div className="col-sm-3">{this.state.id}</div>
-                <div className="col-sm-3">{this.state.firstName + " " + this.state.lastName}</div>
-                <div className="col-sm-3">
-                    <input type="checkbox" name="admin" checked={this.state.admin} disabled={true}/>
-                </div>
-                <div className="col-sm-3">
-                    <input type="checkbox" name="active" checked={this.state.active} disabled={true}/>
-                </div>
+                <a className="row" data-toggle="collapse" onClick={this.displayEdit.bind(this)}>
+                    <div className="col-sm-3">{this.state.id}</div>
+                    <div className="col-sm-3">{this.state.firstName + " " + this.state.lastName}</div>
+                    <div className="col-sm-3">
+                        <input type="checkbox" name="admin" checked={this.state.admin} disabled={true}/>
+                    </div>
+                    <div className="col-sm-3">
+                        <input type="checkbox" name="active" checked={this.state.active} disabled={true}/>
+                    </div>
                 </a>
-                {this.state.showReply && <EditUserRow id={this.state.id} firstName={this.state.firstName}
-                lastName={this.state.lastName} admin={this.state.admin} active={this.state.active}/>}
+               <div className="edit-collapse">
+                   <EditUserRow id={this.state.id} firstName={this.state.firstName}
+                    lastName={this.state.lastName} admin={this.state.admin} active={this.state.active}/>
+               </div>
             </div>
         )
     }

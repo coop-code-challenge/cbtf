@@ -29,3 +29,13 @@
 .refTablesFrame{
     display: none;
 }
+
+.edit-collapse {
+    display: none;
+    clear: both;
+    width: 100%;
+}
+
+.row {
+    clear:left;
+}
