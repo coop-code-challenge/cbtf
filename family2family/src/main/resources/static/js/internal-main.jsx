@@ -1,4 +1,3 @@
-
 class NavBarComponent extends React.Component {
     render() {
         return(
@@ -15,6 +14,7 @@ class NavBarComponent extends React.Component {
         )
     }
 }
+
 
 class AlreadySignedIn extends React.Component {
     constructor(props) {
@@ -35,28 +35,61 @@ class AlreadySignedIn extends React.Component {
 }
 
 class AlertComponent extends React.Component{
+    constructor(props) {
+        super(props);
+
+        this.state = {alerts: []};
+    }
+
+    componentWillMount() {
+        $.getJSON('internal-api/AlertsUpdate').then((data) => {
+            this.setState({alerts: data._embedded.AlertsUpdate});
+            console.log(this.state.alerts);
+        });
+    }
+
     render(){
+        let alertItems;
+        if(this.state.alerts){
+            alertItems = this.state.alerts.map(alert => {
+                return (
+                    <AlertItem key={alert.dateTime} alert={alert}/>
+                )
+            })
+        }
         return (
             <div>
-                <h3>Date</h3>
-                <p>Message</p>
+                {alertItems}
             </div>
         );
     }
 }
 
+class AlertItem extends React.Component {
+    render(){
+        var time = this.props.alert.dateTime;
+        var date = (new Date (time).toDateString());
+        return (
+            <div>
+                <h3>
+                    {date}
+                </h3>
+                <p>{this.props.alert.message}</p>
+            </div>
+        );
+    }
+}
 
 class AppContent extends React.Component {
     //TODO add routing or page state handling
     render() {
         return (
             <div>
-                <NavBarComponent />
                 <h2>Updates and Alerts</h2>
                 <AlertComponent />
             </div>
         );
     }
 }
-
+ReactDOM.render(<NavBarComponent />, document.getElementById('navBar'));
 ReactDOM.render(<AppContent />, document.getElementById('appContent'));
