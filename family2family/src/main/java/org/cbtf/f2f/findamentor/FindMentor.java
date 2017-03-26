@@ -49,19 +49,36 @@ public class FindMentor {
             allDiags.addAll(diags);
         }
 
-
         Iterable<Child> allChildren = childRepo.findAll();
 
         Child temp = null;
 
-        for(Child child : allChildren) {
-           Set<ChildDiagnosis> intersectionSet = Sets.intersection(allDiags, child.getDiagnoses());
-           if(intersectionSet.size() > 0) {
+        Set<Child> allChildSet = Sets.newHashSet(allChildren);
+        Set<Child> userChildSet = Sets.newHashSet(children);
+        Set<Child> differenceSet = Sets.difference(allChildSet, userChildSet);
 
-               temp = child;
+        Set<Integer> diagId = new HashSet<>();
 
-               break;
-           }
+        for(ChildDiagnosis diag : allDiags){
+            diagId.add(diag.getDiagnosis().getId());
+        }
+
+        for(Child child : differenceSet) {
+            //Set<ChildDiagnosis> intersectionSet = Sets.intersection(allDiags, child.getDiagnoses());
+            for(ChildDiagnosis diagnosis : child.getDiagnoses()){
+
+                if(diagId.contains(diagnosis.getDiagnosis().getId())) {
+                    temp = child;
+
+                    break;
+
+                }
+
+            }
+            if(temp != null){
+
+                break;
+            }
         }
 
         if(temp == null) {
@@ -69,7 +86,7 @@ public class FindMentor {
             return null;
         }
         else {
-            Contact match = match = temp.getContact();
+            Contact match = temp.getContact();
             Users userOfMatch = userRepo.findOne(match.getPrimaryEmail());
             return userOfMatch;
         }
