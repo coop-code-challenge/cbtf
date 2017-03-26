@@ -1,1 +1,30 @@
 /* The css file for the main application */
+
+.row-one {
+    width: 100%;
+    overflow: auto;
+}
+
+.component-box {
+    border: 1px solid black;
+    border-left: 3em solid black !important;
+    height: 100%;
+    margin:5px;
+}
+
+.component-box-title{
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: .5em;
+}
+
+.contact-information-box, .note-box {
+    background-color: white;
+}
+
+.notes-textarea {
+    width: 98%;
+    height: 105px;
+    resize: none;
+    margin-left: 5px;
+}

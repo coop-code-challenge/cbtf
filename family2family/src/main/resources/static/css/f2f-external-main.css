@@ -1,0 +1,15 @@
+
+#logo-pic {
+    float: left;
+}
+
+#site-title {
+    float: left;
+    font-family: 'sans-serif';
+    padding-left: 1em;
+    text-align: center;
+}
+
+.navbar-brand {
+    font-size: 2em !important;
+}

@@ -2,12 +2,13 @@
 class NavBarComponent extends React.Component {
     render() {
         return(
-            <nav className="navbar navbar-default">
+            <nav className="navbar">
                 <div className="container-fluid">
                     <ul className="nav navbar-nav">
-                        <li className="active"><a href="#">Contact Entry</a></li>
-                        <li><a href="#Page1">Find a Mentor</a></li>
-                        <li><a href="#Page2">Admin Settings</a></li>
+                        <li className="active"><a href="#">Home</a></li>
+                        <li><a href="#Page1" id="contact-entry">Contact Entry</a></li>
+                        <li><a href="#Page2" id="find-a-mentor">Find a Mentor</a></li>
+                        <li><a href="#Page3" id="admin-settings">Admin Settings</a></li>
                     </ul>
                 </div>
             </nav>
@@ -28,14 +29,22 @@ class AlreadySignedIn extends React.Component {
         });
     }
 
-    render() {
-        return(
+
+
+
+}
+
+class AlertComponent extends React.Component{
+    render(){
+        return (
             <div>
-                <span>Congrats {this.state.person.givenName}, you are signed in.</span>
+                <h3>Date</h3>
+                <p>Message</p>
             </div>
         );
     }
 }
+
 
 class AppContent extends React.Component {
     //TODO add routing or page state handling
@@ -43,7 +52,8 @@ class AppContent extends React.Component {
         return (
             <div>
                 <NavBarComponent />
-                <AlreadySignedIn />
+                <h2>Updates and Alerts</h2>
+                <AlertComponent />
             </div>
         );
     }
