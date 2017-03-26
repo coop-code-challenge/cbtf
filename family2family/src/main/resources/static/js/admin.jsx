@@ -69,17 +69,6 @@ class NavBarComponent extends React.Component {
     }
 }
 
-class TabBarComponent extends React.Component {
-    render() {
-        return(
-            <ul className="nav nav-tabs">
-                <li><a href="#">Users</a></li>
-                <li><a href="#">Reference Tables</a></li>
-            </ul>
-        )
-    }
-}
-
 class EditUserRow extends React.Component {
     constructor(props) {
         super(props);
@@ -146,7 +135,6 @@ class AppContent extends React.Component {
         return (
             <div>
                 <NavBarComponent />
-                <TabBarComponent/>
                 <UserTable />
                 <EditUserRow  userid="" />
 
