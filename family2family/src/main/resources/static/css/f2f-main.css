@@ -25,13 +25,21 @@
 
 .leftInformation {
     background-color: white;
-    height: 100%;
+    border: 2px solid black;
+    text-align: center;
+    padding: 3px;
+    margin-left: 15%;
 }
 .rowOne {
     width: 100%;
+    border: 2px solid black;
 }
 
 .notes-textarea {
     width: 100%;
     height: 80%;
+}
+
+.border {
+    border: 2px solid black;
 }

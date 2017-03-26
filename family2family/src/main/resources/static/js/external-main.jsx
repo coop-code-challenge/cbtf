@@ -73,7 +73,8 @@ class Notes extends React.Component{
 class Phone_Information extends React.Component{
     render(){
         return(
-            <div>
+            <div className="componentBox">
+            <div className="leftInformation">
                 <h3>
                     My Contact Information:
                 </h3>
@@ -97,6 +98,7 @@ class Phone_Information extends React.Component{
                     <input type ="text" placeholder="State">
                     </input>
                 </form>
+            </div>
             </div>
         )
     }
