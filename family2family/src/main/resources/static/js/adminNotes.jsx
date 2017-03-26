@@ -5,14 +5,16 @@ class AdminNotes extends React.Component {
             <div>
                 <h4>Notes</h4>
                 <table>
-                    <tr>
-                        <td>Administrator Notes</td>
-                        <td>Mentor's/Mentee's Notes</td>
-                    </tr>
-                    <tr>
-                        <td> <textarea name="admin-message" rows="7" cols="30"></textarea></td>
-                        <td> {this.props.notes.mentorMenteeNotes}</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>Administrator Notes</td>
+                            <td>Mentor's/Mentee's Notes</td>
+                        </tr>
+                        <tr>
+                            <td> <textarea name="admin-message" rows="7" cols="30"></textarea></td>
+                            <td> {this.props.notes.mentorMenteeNotes}</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         );
@@ -20,7 +22,7 @@ class AdminNotes extends React.Component {
 }
 
 var notes = {
-    mentorMenteeNotes:"No notes at this time"
+    mentorMenteeNotes:" No notes at this time "
 };
 
-ReactDOM.render(<AdminNotes />, document.getElementById('root'));
+ReactDOM.render(<AdminNotes notes={notes} />, document.getElementById('root'));
