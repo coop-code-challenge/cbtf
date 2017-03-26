@@ -126,20 +126,6 @@ class TabBarComponent extends React.Component {
         )
     }
 }
-//
-// function displayUsers() {
-//     console.log("?Herrrro~");
-//     ReactDOM.getElementsByClassName("").style.display = 'none';
-//     ReactDOM.getElementsByClassName("usersFrame").style.display = 'block';
-// }
-//
-// function displayRefTable() {
-//     console.log("?Herrrwerwerwerwerro~");
-//
-//
-//     ReactDOM.getElementsByClassName("usersFrame").style.display = 'none';
-//     ReactDOM.getElementsByClassName("").style.display = 'block';
-// }
 
 class EditUserRow extends React.Component {
     constructor(props) {
