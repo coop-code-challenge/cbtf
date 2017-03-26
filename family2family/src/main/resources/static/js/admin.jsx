@@ -22,15 +22,14 @@ class User extends React.Component {
                     <div className="col-sm-3">
                         <input type="checkbox" name="active" checked={this.props.activechecked} disabled={true}/>
                     </div>
-
                 </a>
                 {this.state.showReply && <EditUserRow />}
             </div>
         )
     }
 }
-class UserTable extends React.Component {
 
+class UserTable extends React.Component {
     render() {
         return(
             <div class="container">
@@ -55,26 +54,75 @@ class NavBarComponent extends React.Component {
             <nav className="navbar navbar-default">
                 <div className="container-fluid">
                     <ul className="nav navbar-nav">
-                       <li><a href="">Users</a></li>
-                       <li><a href="">Reference Tables</a></li>
-                   </ul>
+                        <li className="active"><a href="#">Home</a></li>
+                        <li><a href="#Page1">Page 1</a></li>
+                        <li><a href="#Page2">Page 2</a></li>
+                        <li><a href="#Page3">Page 3</a></li>
+                    </ul>
                 </div>
             </nav>
         )
     }
 }
 
-class TabBarComponent extends React.Component {
-
+class TabContentFrames extends React.Component {
     render() {
-        return(
-            <ul className="nav nav-tabs">
-                <li><a href="#">Users</a></li>
-                <li><a href="#">Reference Tables</a></li>
-            </ul>
+        return (
+            <div className="container">
+                <div className="usersFrame">
+                    <h1>This is the users tab</h1>
+                    <UserTable />
+                </div>
+                <div className="refTablesFrame">
+                    <h1>This is the ref table tab</h1>
+                </div>
+            </div>
         )
     }
 }
+
+class TabBarComponent extends React.Component {
+
+    displayUsers(e){
+        e.preventDefault();
+        console.log("Users Frame");
+        document.getElementsByClassName("refTablesFrame")[0].style.display = 'none';
+        document.getElementsByClassName("usersFrame")[0].style.display = 'block';
+    }
+
+    displayRefTable(e) {
+        e.preventDefault();
+        console.log("RefTable");
+        document.getElementsByClassName("usersFrame")[0].style.display = 'none';
+        document.getElementsByClassName("refTablesFrame")[0].style.display = 'block';
+    }
+
+    render() {
+        return(
+            <div className="container">
+                <ul className="nav nav-tabs">
+                    <li><a onClick={this.displayUsers.bind(this)}>Users</a></li>
+                    <li><a onClick={this.displayRefTable.bind(this)}>Reference Tables</a></li>
+                </ul>
+                <TabContentFrames />
+            </div>
+        )
+    }
+}
+//
+// function displayUsers() {
+//     console.log("?Herrrro~");
+//     ReactDOM.getElementsByClassName("refTablesFrame").style.display = 'none';
+//     ReactDOM.getElementsByClassName("usersFrame").style.display = 'block';
+// }
+//
+// function displayRefTable() {
+//     console.log("?Herrrwerwerwerwerro~");
+//
+//
+//     ReactDOM.getElementsByClassName("usersFrame").style.display = 'none';
+//     ReactDOM.getElementsByClassName("refTablesFrame").style.display = 'block';
+// }
 
 class EditUserRow extends React.Component {
     constructor(props) {
@@ -141,12 +189,8 @@ class AppContent extends React.Component {
     render() {
         return (
             <div>
-
                 <NavBarComponent />
                 <TabBarComponent/>
-                <UserTable />
-
-
             </div>
         );
     }
