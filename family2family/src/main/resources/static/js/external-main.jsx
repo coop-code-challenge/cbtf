@@ -58,11 +58,12 @@ class Notes extends React.Component{
         return(
             <div className="note-box">
                 <div className="component-box-title">
-                    My Notes:
+                    My Notes
                 </div>
                 <textarea rows="6" cols="50" className="notes-textarea">
                 </textarea>
-        </div>);
+            </div>
+        );
     }
 }
 class AppContent extends React.Component {
@@ -71,9 +72,18 @@ class AppContent extends React.Component {
         return (
             <div>
                 <AlreadySignedIn />
-                <div className="row-one">
-                        <div className="component-box"><MatchContactComponent dayPhoneNumber="123456789" otherPhoneNumber="987654321" email="something@gmail.com" altEmail="somethingelse@gmail.com" location="here.exe" /></div>
-                        <div className="component-box"><Notes /></div>
+                <div className="row-one row">
+                    <div className="col-sm-12 col-md-6 col-lg-6">
+                        <div className="component-box" >
+                            <MatchContactComponent dayPhoneNumber="123456789" otherPhoneNumber="987654321" email="something@gmail.com" altEmail="somethingelse@gmail.com" location="here.exe" />
+                        </div>
+                    </div>
+
+                    <div className="col-sm-12 col-md-6 col-lg-6">
+                        <div className="component-box">
+                            <Notes />
+                        </div>
+                    </div>
                 </div>
             </div>
         );
