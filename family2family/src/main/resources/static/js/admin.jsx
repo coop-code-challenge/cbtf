@@ -73,7 +73,7 @@ class TabContentFrames extends React.Component {
                     <h1>This is the users tab</h1>
                     <UserTable />
                 </div>
-                <div className="refTablesFrame">
+                <div className="">
                     <h1>This is the ref table tab</h1>
                 </div>
             </div>
@@ -86,7 +86,7 @@ class TabBarComponent extends React.Component {
     displayUsers(e){
         e.preventDefault();
         console.log("Users Frame");
-        document.getElementsByClassName("refTablesFrame")[0].style.display = 'none';
+        document.getElementsByClassName("")[0].style.display = 'none';
         document.getElementsByClassName("usersFrame")[0].style.display = 'block';
     }
 
@@ -94,7 +94,7 @@ class TabBarComponent extends React.Component {
         e.preventDefault();
         console.log("RefTable");
         document.getElementsByClassName("usersFrame")[0].style.display = 'none';
-        document.getElementsByClassName("refTablesFrame")[0].style.display = 'block';
+        document.getElementsByClassName("")[0].style.display = 'block';
     }
 
     render() {
@@ -112,7 +112,7 @@ class TabBarComponent extends React.Component {
 //
 // function displayUsers() {
 //     console.log("?Herrrro~");
-//     ReactDOM.getElementsByClassName("refTablesFrame").style.display = 'none';
+//     ReactDOM.getElementsByClassName("").style.display = 'none';
 //     ReactDOM.getElementsByClassName("usersFrame").style.display = 'block';
 // }
 //
@@ -121,7 +121,7 @@ class TabBarComponent extends React.Component {
 //
 //
 //     ReactDOM.getElementsByClassName("usersFrame").style.display = 'none';
-//     ReactDOM.getElementsByClassName("refTablesFrame").style.display = 'block';
+//     ReactDOM.getElementsByClassName("").style.display = 'block';
 // }
 
 class EditUserRow extends React.Component {
