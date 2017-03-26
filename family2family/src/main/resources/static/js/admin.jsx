@@ -47,7 +47,6 @@ constructor(props) {
         );
         return (
             <div>
-                <div className="tableheader">Users</div>
                 <div className="row">
                     <div className="col-xs-3">
                         User Id
