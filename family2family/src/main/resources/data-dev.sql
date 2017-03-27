@@ -270,6 +270,7 @@ insert into users(id, admin, active) values('bafz86@mst.edu', false, false);
 insert into users(id, admin, active) values('fabirk93@gmail.com',true, true);
 insert into users(id, admin, active) values('kylemiller457@gmail.com',false, true);
 insert into users(id, admin, active) values('thanlone1995@gmail.com',false, true);
+insert into users(id, admin, active) values('theismanj@gmail.com', true, true);
 
 
 --Contact #1
