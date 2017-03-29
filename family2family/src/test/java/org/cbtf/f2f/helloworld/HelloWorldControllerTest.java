@@ -1,8 +1,11 @@
 package org.cbtf.f2f.helloworld;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
-public class HelloWorldControllerTest extends TestCase {
+import static org.junit.Assert.assertEquals;
+
+public class HelloWorldControllerTest {
+    @Test
     public void testGetHello() {
         HelloWorldController service = new HelloWorldController();
         String response = service.getHello("Justin");

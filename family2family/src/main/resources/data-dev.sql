@@ -266,8 +266,12 @@ INSERT INTO DIAGNOSIS(DIAGNOSIS_ID, DESCRIPTION) VALUES
 --Dummy Data
 insert into users(id, admin, active, first_name, last_name) values('work@pls', false, false, 'John', 'Smith');
 insert into users(id, admin, active, first_name, last_name) values('work@gmail.com', true, true, 'Bob', 'Smith');
-insert into users(id, admin, active, first_name, last_name) values('jimmy@awesome.com', false, true, 'Jimmy', 'Neutron');
-insert into users(id, admin, active, first_name, last_name) values('dex@lab', true, false, 'Dextor', 'Lab');
+insert into users(id, admin, active, first_name, last_name) values('bafz86@mst.edu', false, false);
+insert into users(id, admin, active, first_name, last_name) values('fabirk93@gmail.com',true, true);
+insert into users(id, admin, active, first_name, last_name) values('kylemiller457@gmail.com',false, true);
+insert into users(id, admin, active, first_name, last_name) values('thanlone1995@gmail.com',false, true);
+insert into users(id, admin, active, first_name, last_name) values('theismanj@gmail.com', true, true);
+
 
 --Contact #1
 insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,

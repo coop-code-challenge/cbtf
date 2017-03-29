@@ -7,8 +7,8 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css"
           th:href="@{webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
     <link rel="stylesheet"
-          href="../static/css/f2f-external-main.css"
-          th:href="@{/css/f2f-external-main.css}"/>
+          href="../static/css/f2f-main.css"
+          th:href="@{/css/f2f-main.css}"/>
 </head>
 
 <body>
@@ -32,7 +32,7 @@
 <!-- this script is to change the page-title class on External main page -->
 <script>
     $(document).ready(function(){
-        $("#site-title #page-title a").text("Mentor/Mentee Information Form");
+        $("#site-title #page-title a").html("Mentor/Mentee Information Form");
     });
 </script>
 </body>
