@@ -7,15 +7,17 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css"
           th:href="@{webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
     <link rel="stylesheet"
-          href="../static/css/f2f-match-maker.css.css"
-          th:href="@{/css/f2f-match-maker.css}"/>
+          href="../static/css/f2f-main.css"
+          th:href="@{/css/f2f-main.css}"/>
 </head>
 
 <body>
 
 <div class="container" role="main">
-    <div class="page-header" id="mainHeader"></div>
+    <div class="page-header" id="mainHeader" pageTitle="Find A Match"></div>
+    <div id="navBar"/>
     <div id="root"></div>
+    <div class="page-footer" id="mainFooter"></div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js" th:src="@{webjars/react/15.3.2/react.js}"></script>
@@ -27,7 +29,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" th:href="@{webjars/toastr/2.1.3/toastr.min.css}"/>
 
 <script type="text/babel" src="../static/js/header.jsx" th:src="@{/js/header.jsx}"></script>
+<script type="text/babel" src="../static/js/nav-bar.jsx" th:src="@{/js/nav-bar.jsx}"></script>
 <script type="text/babel" src="../static/js/match-maker.jsx" th:src="@{/js/match-maker.jsx}"></script>
+<script type="text/babel" src="../static/js/footer.jsx" th:src="@{/js/footer.jsx}"></script>
 
 </body>
 

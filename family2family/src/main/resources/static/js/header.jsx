@@ -8,9 +8,9 @@ class HeaderComponent extends React.Component {
                             <img src="/image/f2f-logo.png" />
                         </div>
 
-                        <div id="site-title" class="col-sm-12 col-md-8 col-lg-8">
+                        <div id="site-title" className="col-sm-12 col-md-8 col-lg-8">
                             <div id="sitewise-title"> <a className="navbar-brand" href="/">Childrens Brain Tumor Foundation</a></div>
-                            <div id="page-title"><a className="navbar-brand" href="#">Welcome!</a></div>
+                            <div id="page-title"><a className="navbar-brand" href="#">{this.props.pageTitle}</a></div>
                         </div>
                     </div>
                     <div id="navbar" className="navbar-collapse">
