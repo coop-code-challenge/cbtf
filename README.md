@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/coop-code-challenge/cbtf.svg?branch=develop)](https://travis-ci.org/coop-code-challenge/cbtf)
+
 # Children's Brain Tumor Foundation - Family 2 Family
 
 The objective of this initiative is to streamline the entry and
