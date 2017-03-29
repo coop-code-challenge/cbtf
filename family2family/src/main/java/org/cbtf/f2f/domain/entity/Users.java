@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import java.io.Serializable;
 
 /**
  * @author Matt Lievens.
@@ -18,9 +17,9 @@ public class Users {
 
     private String lastName;
 
-    private Boolean admin;
+    private Boolean admin = Boolean.FALSE;
 
-    private Boolean active;
+    private Boolean active = Boolean.FALSE;
 
     @OneToOne
     @JoinColumn(name = Contact.COLUMN_PRIMARY_EMAIL)
