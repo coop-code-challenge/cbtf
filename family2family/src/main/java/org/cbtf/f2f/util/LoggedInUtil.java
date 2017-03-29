@@ -18,8 +18,8 @@ public class LoggedInUtil {
 
     }
 
-    public static UserInfo getLoggedInUser(){
+    /*public static UserInfo getLoggedInUser(){
         UserInfo userInfo = (UserInfo) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return userInfo;
-    }
+    }*/
 }
