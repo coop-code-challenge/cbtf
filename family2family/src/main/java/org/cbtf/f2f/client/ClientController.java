@@ -15,8 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ClientController {
 
+    private final UsersRepository usersRepository;
+
     @Autowired
-    private UsersRepository usersRepository;
+    public ClientController(final UsersRepository usersRepository) {
+        this.usersRepository = usersRepository;
+    }
+
     /**
      * Returns the name of the html file to be served up at the url path. The @RequestMapping will cause the same
      * file to be served no matter which HTTP method is used.
@@ -30,7 +35,7 @@ public class ClientController {
             if (appUser == null) {
                 return "request-auth";
             }
-            else if (appUser.getAdmin() == true) {
+            else if (appUser.getAdmin()) {
                 return "internal-main";
             }
             else {
