@@ -110,7 +110,7 @@ class EditUserRow extends React.Component {
                         </div>
                     </div>
                     <div className="button-group">
-                        <button type="submit" className="btn delete col-sm-1">Delete</button>
+                        <button type="submit" className="btn btn-danger delete col-sm-1">Delete</button>
                         <button type="submit" className="btn col-sm-1">Reset</button>
                         <button type="submit" className="btn btn-primary col-sm-1">Save</button>
                     </div>
