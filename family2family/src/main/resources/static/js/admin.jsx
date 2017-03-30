@@ -1,52 +1,127 @@
 class User extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {id: props.user.id, firstName: props.user.firstName, lastName: props.user.lastName,
-            admin: props.user.admin, active: props.user.active, showReply: {false}};
-    }
-
-    onClick(e){
+    displayEdit(e) {
         e.preventDefault();
-        this.setState({showReply: !this.state.showReply})
-    }
-
-    displayEdit(e){
-        e.preventDefault();
-        console.log("Edit Collapse");
-        if(document.getElementsByClassName("edit-collapse")[0].style.display == 'block')
-        {
+        if (document.getElementsByClassName("edit-collapse")[0].style.display == 'inline-block') {
             document.getElementsByClassName("edit-collapse")[0].style.display = 'none';
+        } else {
+            document.getElementsByClassName("edit-collapse")[0].style.display = 'inline-block';
         }
-        else
-        {
-            document.getElementsByClassName("edit-collapse")[0].style.display = 'block';
-        };
     }
 
     render() {
-        return(
+        return (
             <div>
-                <a className="row" data-toggle="collapse" onClick={this.displayEdit.bind(this)}>
-                    <div className="col-sm-3">{this.state.id}</div>
-                    <div className="col-sm-3">{this.state.firstName + " " + this.state.lastName}</div>
+                <a className="row" onClick={this.displayEdit.bind(this)}>
+                    <div className="col-sm-3">{this.props.user.userId}</div>
+                    <div
+                        className="col-sm-3">{this.props.user.firstName + " " + this.props.user.lastName}</div>
                     <div className="col-sm-3">
-                        <input type="checkbox" name="admin" checked={this.state.admin} disabled={true}/>
+                        <input type="checkbox" name="admin"
+                               checked={this.props.user.admin} disabled={true}/>
                     </div>
                     <div className="col-sm-3">
-                        <input type="checkbox" name="active" checked={this.state.active} disabled={true}/>
+                        <input type="checkbox" name="active"
+                               checked={this.props.user.active} disabled={true}/>
                     </div>
                 </a>
-               <div className="edit-collapse">
-                   <EditUserRow id={this.state.id} firstName={this.state.firstName}
-                    lastName={this.state.lastName} admin={this.state.admin} active={this.state.active}/>
-               </div>
+                <div className="edit-collapse">
+                    <EditUserRow id={this.props.user.userId}
+                                 firstName={this.props.user.firstName}
+                                 lastName={this.props.user.lastName}
+                                 admin={this.props.user.admin}
+                                 active={this.props.user.active}/>
+                </div>
             </div>
         )
     }
 }
+
+class EditUserRow extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            id: props.id,
+            firstName: props.firstName,
+            lastName: props.lastName,
+            admin: props.admin,
+            active: props.active
+        };
+    }
+
+    handleChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+          [name]: value
+        });
+    }
+
+    render() {
+        return (
+            <div className="editUserRow">
+                <form className="form-horizontal">
+                    <div className="form-group">
+                        <label className="control-label col-sm-2" htmlFor="id">User
+                            ID: </label>
+                        <div className="col-sm-3">
+                            <input type="text" className="form-control" name="id"
+                                   value={this.state.id} onChange={this.handleChange}/>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label className="control-label col-sm-2" htmlFor="fname">First
+                            Name:</label>
+                        <div className="col-sm-3">
+                            <input type="text" className="form-control" name="fname"
+                                   value={this.state.firstName}
+                                   onChange={this.handleChange}/>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label className="control-label col-sm-2" htmlFor="lname">Last
+                            Name: </label>
+                        <div className="col-sm-3">
+                            <input type="text" className="form-control" name="lname"
+                                   value={this.state.lastName}
+                                   onChange={this.handleChange}/>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label className="control-label col-md-2" htmlFor="admin">Administrator: </label>
+                        <div className="col-sm-3">
+                            <div className="checkbox">
+                                <input type="checkbox" name="admin"
+                                       checked={this.state.admin}
+                                       onChange={this.handleChange}/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label className="control-label col-md-2"
+                               htmlFor="active">Active: </label>
+                        <div className="col-sm-3">
+                            <div className="checkbox">
+                                <input type="checkbox" name="active"
+                                       checked={this.state.active}
+                                       onChange={this.handleChange}/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="button-group">
+                        <button type="submit" className="btn delete col-sm-1">Delete</button>
+                        <button type="submit" className="btn col-sm-1">Reset</button>
+                        <button type="submit" className="btn btn-primary col-sm-1">Save</button>
+                    </div>
+                </form>
+            </div>
+        )
+    }
+}
+
 class UserTable extends React.Component {
-constructor(props) {
+    constructor(props) {
         super(props);
         this.state = {users: []};
     }
@@ -56,9 +131,10 @@ constructor(props) {
             this.setState({users: data._embedded.Users});
         })
     }
+
     render() {
         let users = this.state.users.map(user =>
-            <User key={user.id} user={user}/>
+            <User key={user.userId} user={user}/>
         );
         return (
             <div>
@@ -84,7 +160,7 @@ constructor(props) {
 
 class NavBarComponent extends React.Component {
     render() {
-        return(
+        return (
             <nav className="navbar navbar-default">
                 <div className="container-fluid">
                     <ul className="nav navbar-nav">
@@ -116,88 +192,27 @@ class TabContentFrames extends React.Component {
 
 class TabBarComponent extends React.Component {
 
-    displayUsers(e){
+    displayUsers(e) {
         e.preventDefault();
-        console.log("Users Frame");
         document.getElementsByClassName("refTablesFrame")[0].style.display = 'none';
         document.getElementsByClassName("usersFrame")[0].style.display = 'block';
     }
 
     displayRefTable(e) {
         e.preventDefault();
-        console.log("RefTable");
         document.getElementsByClassName("usersFrame")[0].style.display = 'none';
         document.getElementsByClassName("refTablesFrame")[0].style.display = 'block';
     }
 
     render() {
-        return(
+        return (
             <div className="container">
                 <ul className="nav nav-tabs">
                     <li><a onClick={this.displayUsers.bind(this)}>Users</a></li>
-                    <li><a onClick={this.displayRefTable.bind(this)}>Reference Tables</a></li>
+                    <li><a onClick={this.displayRefTable.bind(this)}>Reference Tables</a>
+                    </li>
                 </ul>
                 <TabContentFrames />
-            </div>
-        )
-    }
-}
-
-class EditUserRow extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {id:props.id, firstName:props.firstName, lastName:props.lastName, admin:props.admin, active:props.active};
-    }
-
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
-
-
-    render() {
-        return(
-            <div className="editUserRow">
-                <form className="form-horizontal">
-                    <div className="form-group">
-                        <label className="control-label col-sm-2" htmlFor="id">User ID: </label>
-                        <div className="col-sm-3">
-                            <input type="text" className="form-control" name="id" value={this.props.id} onChange={this.handleChange}/>
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <label className="control-label col-sm-2" htmlFor="fname">First Name:</label>
-                        <div className="col-sm-3">
-                            <input type="text" className="form-control" name="fname" value={this.props.firstName} onChange={this.handleChange}/>
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <label className="control-label col-sm-2" htmlFor="lname">Last Name: </label>
-                        <div className="col-sm-3">
-                            <input type="text" className="form-control" name="lname" value={this.props.lastName} onChange={this.handleChange}/>
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <label className="control-label col-md-2" htmlFor="admin">Administrator: </label>
-                        <div className="col-sm-3">
-                            <div className="checkbox">
-                                <input type="checkbox" name="admin" checked={this.props.admin} onChange={this.handleChange}/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <label className="control-label col-md-2" htmlFor="active">Active: </label>
-                        <div className="col-sm-3">
-                            <div className="checkbox">
-                                <input type="checkbox" name="active" checked={this.props.active} onChange={this.handleChange}/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="button-group">
-                        <button type="submit" className="btn delete col-sm-1">Delete</button>
-                        <button type="submit" className="btn col-sm-1">Reset</button>
-                        <button type="submit" className="btn btn-primary col-sm-1">Save</button>
-                    </div>
-                </form>
             </div>
         )
     }
