@@ -1,7 +1,11 @@
 defaultTasks 'clean', 'build'
 
 subprojects {
+
+    group = 'org.cbtf'
+
     repositories {
         mavenCentral()
     }
+
 }
