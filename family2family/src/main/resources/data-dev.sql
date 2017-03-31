@@ -271,6 +271,7 @@ insert into users(id, admin, active, first_name, last_name) values('fabirk93@gma
 insert into users(id, admin, active, first_name, last_name) values('kylemiller457@gmail.com',false, true, '', '');
 insert into users(id, admin, active, first_name, last_name) values('thanlone1995@gmail.com',false, true, '', '');
 insert into users(id, admin, active, first_name, last_name) values('theismanj@gmail.com', true, true, '', '');
+insert into users(id, admin, active, first_name, last_name) values('toscott1@gmail.com', true, true, 'Tony', 'Scott');
 
 
 --Contact #1

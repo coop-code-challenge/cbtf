@@ -1,21 +1,21 @@
+/* The css file for the main application */
+
 .button-group button {
     margin: 4px;
 }
+
 .button-group .delete{
     margin: 4px 90px 4px 70px;
 }
 
-.editUserRow {
+.edit-user-row {
     margin: 30px 0 0 0;
     clear: both;
 }
-.editCategoryForm {
+.edit-category-form {
     margin: 30px 0 0 0;
     clear: both;
 }
-
-/* The css file for the main application */
-
 
 #logo-pic {
     float: left;
@@ -23,22 +23,26 @@
 
 #site-title {
     float: left;
-    font-family:'sans-serif';
+    font-family: 'sans-serif';
     padding-left: 1em;
 }
+
 body{
     background-color: #cccccc;
 }
+
 #navBar{
     background-color: #ffffff;
-    margin-top: 0px;
+    margin-top: 0;
     width: 100%;
 }
+
 #mainHeader{
     background-color: white;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     width: 100%;
 }
+
 .navbar-brand {
     font-size: 2em !important;
 }
@@ -60,9 +64,8 @@ body{
     border-radius: 5px !important;
     background-color: #ffffff !important;
     color: #23527c !important;
-    margin: 5px;
     width: 60%;
-    margin-left: 20%;
+    margin: 5px 5px 5px 20%;
     padding: 5px;
 }
 

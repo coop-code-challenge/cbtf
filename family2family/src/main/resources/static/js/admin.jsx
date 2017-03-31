@@ -60,7 +60,7 @@ class EditUserRow extends React.Component {
 
     render() {
         return (
-            <div className="editUserRow">
+            <div className="edit-user-row">
                 <form className="form-horizontal">
                     <div className="form-group">
                         <label className="control-label col-sm-2" htmlFor="id">User
@@ -158,31 +158,14 @@ class UserTable extends React.Component {
     }
 }
 
-class NavBarComponent extends React.Component {
-    render() {
-        return (
-            <nav className="navbar navbar-default">
-                <div className="container-fluid">
-                    <ul className="nav navbar-nav">
-                        <li className="active"><a href="#">Home</a></li>
-                        <li><a href="#Page1">Page 1</a></li>
-                        <li><a href="#Page2">Page 2</a></li>
-                        <li><a href="#Page3">Page 3</a></li>
-                    </ul>
-                </div>
-            </nav>
-        )
-    }
-}
-
 class TabContentFrames extends React.Component {
     render() {
         return (
             <div className="container">
-                <div className="usersFrame">
+                <div className="users-frame">
                     <UserTable />
                 </div>
-                <div className="refTablesFrame">
+                <div className="ref-tables-frame">
                     <h1>This is the ref table tab</h1>
                 </div>
             </div>
@@ -194,14 +177,14 @@ class TabBarComponent extends React.Component {
 
     displayUsers(e) {
         e.preventDefault();
-        document.getElementsByClassName("refTablesFrame")[0].style.display = 'none';
-        document.getElementsByClassName("usersFrame")[0].style.display = 'block';
+        document.getElementsByClassName("ref-tables-frame")[0].style.display = 'none';
+        document.getElementsByClassName("users-frame")[0].style.display = 'block';
     }
 
     displayRefTable(e) {
         e.preventDefault();
-        document.getElementsByClassName("usersFrame")[0].style.display = 'none';
-        document.getElementsByClassName("refTablesFrame")[0].style.display = 'block';
+        document.getElementsByClassName("users-frame")[0].style.display = 'none';
+        document.getElementsByClassName("ref-tables-frame")[0].style.display = 'block';
     }
 
     render() {
@@ -223,7 +206,6 @@ class AppContent extends React.Component {
     render() {
         return (
             <div>
-                <NavBarComponent />
                 <TabBarComponent/>
             </div>
         );
