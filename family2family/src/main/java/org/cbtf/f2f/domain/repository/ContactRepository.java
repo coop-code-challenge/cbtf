@@ -7,5 +7,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource(collectionResourceRel = "Contact", path = "Contact")
 public interface ContactRepository extends CrudRepository<Contact, Integer> {
 
-
+    Contact findFirstByPrimaryEmailIsLike(String primaryEmail);
 }
