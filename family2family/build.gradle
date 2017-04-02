@@ -32,7 +32,6 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-rest")
     compile("org.springframework.security.oauth:spring-security-oauth2")
     compile("com.h2database:h2")
-    compile("com.google.guava:guava:21.0")
 
     compile("org.webjars:bootstrap:3.3.7")
     compile("org.webjars:jquery:3.1.1")

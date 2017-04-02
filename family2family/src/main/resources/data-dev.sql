@@ -769,7 +769,125 @@ values (15, 1, 'Facial paralysis. Smile surgery where tongue nerve was used for 
 (15, 2, 'still working on treatment plan');
 --End Child for Contact 15
 
+-- The following contacts are used for integration tests. Do not modify
+------------------------------------------------------------------------------------------------------------------------
+--Contact #16
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (16, 'Anakin', 'Skywalker', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'Mos Espa', 'Tatooine', 'anakin@nomail.com', TRUE, NULL, FALSE, 'Great feedback from prior matches.', '');
 
+--Begin Child for Contact 16
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (16, FALSE, 976706400000, NULL, 'Luke', 'Skywalker', 16);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (16, 9, 11);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (16, 4),
+(16, 31),
+(16, 45),
+(16, 43),
+(16, 64),
+(16, 76),
+(16, 87),
+(16, 88),
+(16, 89),
+(16, 127),
+(16, 139),
+(16, 142),
+(16, 143),
+(16, 145),
+(16, 173),
+(16, 176),
+(16, 190);
+
+insert into category_note(child_id, category_id, note)
+values (16, 1, 'Facial paralysis. Smile surgery where tongue nerve was used for smile.'),
+(16, 2, 'still working on treatment plan');
+--End Child for Contact 16
+
+--Contact #17
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (17, 'Padme', 'Amidala', TRUE, FALSE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'Theed', 'Naboo', 'padme@nomail.com', TRUE, NULL, FALSE, 'Great feedback from prior matches.', '');
+
+--Begin Child for Contact 17
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (17, FALSE, 976706400000, NULL, 'Leia', 'Skywalker', 17);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (17, 9, 11);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (17, 4),
+(17, 31),
+(17, 45),
+(17, 43),
+(17, 64),
+(17, 76),
+(17, 87),
+(17, 88),
+(17, 89),
+(17, 127),
+(17, 139),
+(17, 142),
+(17, 143),
+(17, 145),
+(17, 173),
+(17, 176),
+(17, 190);
+
+insert into category_note(child_id, category_id, note)
+values (17, 1, 'Facial paralysis. Smile surgery where tongue nerve was used for smile.'),
+(17, 2, 'still working on treatment plan');
+--End Child for Contact 17
+
+--Contact #18
+insert into contact(contact_Id, first_Name, last_Name, mentor, mentee, do_Not_Contact,
+primary_Phone_Number, primary_Phone_Number_Visible_To_Match, secondary_Phone_Number, secondary_Phone_Number_Visible_To_Match,
+city, state, primary_Email, primary_Email_Visible_To_Match, secondary_Email, secondary_Email_Visible_To_Match, contact_Note, admin_Note)
+values (18, 'Darth', 'Maul', FALSE, TRUE, FALSE,
+'111222333', TRUE, NULL, FALSE,
+'Underground', 'Dathomir', 'darth@nomail.com', TRUE, NULL, FALSE, 'Great feedback from prior matches.', '');
+
+--Begin Child for Contact 18
+insert into child(child_id, bereaved, date_of_birth, date_of_death, first, last, contact_id)
+values (18, FALSE, 976706400000, NULL, 'Savage', 'Opress', 18);
+
+insert into child_diagnosis(child_id, diagnosis_id, age_of_diagnosis)
+values (18, 10, 11);
+
+insert into child_subcategory(child_id, subcategory_id)
+values (18, 4),
+(18, 31),
+(18, 45),
+(18, 43),
+(18, 64),
+(18, 76),
+(18, 87),
+(18, 88),
+(18, 89),
+(18, 127),
+(18, 139),
+(18, 142),
+(18, 143),
+(18, 145),
+(18, 173),
+(18, 176),
+(18, 190);
+
+insert into category_note(child_id, category_id, note)
+values (18, 1, 'Facial paralysis. Smile surgery where tongue nerve was used for smile.'),
+(18, 2, 'still working on treatment plan');
+--End Child for Contact 18
+------------------------------------------------------------------------------------------------------------------------
 
 --Mentor_Mentee
 insert into mentor_mentee(mentor, mentee, time_matched) values (1,3, 1490405554);
