@@ -11,3 +11,6 @@ classes/
 
 # Mac Files
 .DS_Store
+
+family2family/node_modules/
+family2family/src/main/resources/static/build/
