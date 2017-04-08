@@ -19,10 +19,10 @@ class FooterComponent extends React.Component {
         return(
             <div id="footer">
                 <ul id="footer-links">
-                    <li><a href="#">Contact Entry</a></li>
-                    <li><a href="#">Find a Member</a></li>
-                    <li><a href="#">Admin Settings</a></li>
-                    <li><a href="/logout">Admin Logout</a></li>
+                    <li><a href="contact-entry">Contact Entry</a></li>
+                    <li><a href="find-a-mentor">Find a Member</a></li>
+                    <li><a href="admin">Admin Settings</a></li>
+                    <li><a href="/logout">Logout</a></li>
                 </ul>
             </div>
         )
