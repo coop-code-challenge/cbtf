@@ -1,20 +1,4 @@
-
-class AlertComponent extends React.Component{
-    render() {
-        return (
-            <div>
-                <h3>The will be the date of the alert</h3>
-                <p>
-                    this will be the message of the alert.
-                </p>
-            </div>
-        )
-    }
-}
-
 class MatchContactComponent extends React.Component{
-
-
     render(){
 
         return (
@@ -45,6 +29,7 @@ class Notes extends React.Component{
         );
     }
 }
+
 class AppContent extends React.Component {
     //TODO add routing or page state handling
     render() {
@@ -53,13 +38,17 @@ class AppContent extends React.Component {
                 <div className="row-one row">
                     <div className="col-sm-12 col-md-6 col-lg-6">
                         <div className="component-box" >
+                            <div className="componentIcon">
+                                <i className="fa fa-user-circle-o fa-stack-1x fa-inverse" style={{fontSize: 2.5 + 'em'}} aria-hidden="true"></i>
+                            </div>
                             <MatchContactComponent dayPhoneNumber="123456789" otherPhoneNumber="987654321" email="something@gmail.com" altEmail="somethingelse@gmail.com" location="here.exe" />
                         </div>
                     </div>
 
                     <div className="col-sm-12 col-md-6 col-lg-6">
                         <div className="component-box">
-                            <Notes />
+                            <div className="componentIcon"><i className="fa fa-pencil-square fa-3x fa-inverse" aria-hidden="true"></i></div>
+                            <Notes/>
                         </div>
                     </div>
                 </div>

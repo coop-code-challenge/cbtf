@@ -101,6 +101,7 @@ body{
     border: 1px solid black;
     border-left: 3em solid black !important;
     height: 100%;
+    background-color: black;
     margin:5px;
 }
 
@@ -120,4 +121,9 @@ body{
     height: 105px;
     resize: none;
     margin-left: 5px;
+}
+
+.componentIcon{
+    position: absolute;
+    left: 23px;
 }
