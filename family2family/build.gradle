@@ -10,6 +10,10 @@ buildscript {
     }
 }
 
+plugins {
+    id "com.moowork.node" version "1.1.1"
+}
+
 // Update appropriately for releases
 version = '1.0.0-SNAPSHOT'
 
@@ -48,4 +52,9 @@ dependencies {
 springBoot {
     // Provides build metadata in the META-INF directory
     buildInfo()
+}
+
+task bundleJs(type: NpmTask, dependsOn: 'npmInstall') {
+    // install the express package only
+    args = ['run', 'build']
 }
