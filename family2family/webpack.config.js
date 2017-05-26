@@ -31,20 +31,34 @@ var ROOT_APP_DIR = path.resolve(dir, 'src/main/web');
  * @returns a module for exporting
  */
 function getConfig(configName) {
-    var configSourceDir = ROOT_APP_DIR + '/' + configName + '/';
-    var configBuildDir = ROOT_BUILD_DIR + '/' + configName + '/';
+    var rootSourceDir = ROOT_APP_DIR + '/' + configName + '/';
+    var sharedSourceDir = ROOT_APP_DIR + '/shared/jsx';
+    var sharedImageDir = ROOT_APP_DIR + '/shared/image';
+    var jsxSourceDir = rootSourceDir + 'jsx/';
+    var cssSourceDir = rootSourceDir + 'css/';
+    var imageSourceDir = rootSourceDir + 'image/';
+    var rootBuildDir = ROOT_BUILD_DIR + '/' + configName + '/';
     return {
-        entry: [configSourceDir +  configName + '.jsx'],
+        entry: [jsxSourceDir +  configName + '.jsx'],
         output: {
-            path: configBuildDir,
+            path: rootBuildDir,
             filename: configName + '-bundle.js'
         },
         module: {
             loaders : [
                 {
                     test : /\.jsx/,
-                    include : configSourceDir,
+                    include : [jsxSourceDir, sharedSourceDir],
                     loader: 'babel-loader'
+                },
+                {
+                    test: /\.css$/,
+                    loader: ['style-loader', 'css-loader']
+                },
+                {
+                    test: /\.(png|jpg|woff|woff2|eot|ttf|svg)$/,
+                    include : [imageSourceDir, sharedImageDir],
+                    loader: 'url-loader?limit=200000'
                 }
             ]
         }
@@ -52,7 +66,7 @@ function getConfig(configName) {
 }
 
 //To add additional configs, just add them to the list here. The naming convention will have to line up.
-var configurations = ['test'];
+var configurations = ['test', 'sign-in'];
 
 var exports = [];
 for (var i = 0; i < configurations.length; i++) {
